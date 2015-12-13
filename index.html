@@ -163,7 +163,7 @@
   
     <div class="article-meta">
       <a href="/2015/12/13/rxJava详解/" class="article-date">
-  	<time datetime="2015-12-13T07:58:19.000Z" itemprop="datePublished">2015-12-13</time>
+  	<time datetime="2015-12-13T08:01:37.000Z" itemprop="datePublished">2015-12-13</time>
 </a>
     </div>
   
@@ -175,17 +175,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这个周六一整天都在学习rxJava，又涨了不少姿势。</p>
-<p>##一.What?   rxJava是什么，它有什么用，有什么优点？##<br>rxJava是一套响应式Java编程框架。整套结构基于观察者模式，它能够解决我们头疼的异步问题，结合rxAndroid可以完全抛弃Android原生的AsyncTask。其链式调用方式让整个思维过程变得清晰流畅。</p>
+<h2 id="一-What?_rxJava是什么，它有什么用，有什么优点">一.What?   rxJava是什么，它有什么用，有什么优点</h2><p>rxJava是一套响应式Java编程框架。整套结构基于观察者模式，它能够解决我们头疼的异步问题，结合rxAndroid可以完全抛弃Android原生的AsyncTask。其链式调用方式让整个思维过程变得清晰流畅。</p>
 <p>这里着重介绍rxJava的优点：<br>1.一套完整的异步解决方案，与AsyncTask相比更加优雅，而且支持的功能更加强大。更重要的是，由于Acitivty生命周期的影响，AsyncTask存在极大的隐患，我们在使用AsyncTask时通常以内部类的形式嵌入Activity中，因为AsyncTask隐式持有Activity的引用，<strong>但是AsyncTask如果不被cancel或者将其任务执行完毕，它就不会被回收</strong>，因为两者生命周期不同步，当执行耗时任务或者手机屏幕旋转导致Activity被销毁时极有可能造成内存泄露！使用rxJava和rxAndroid可以轻松解决这个问题。</p>
 <p>2.链式调用。rxJava整个使用过程中是没有组合嵌套的。因此它不会造成多余的耦合，而且其过程非常清晰，甚至不需要很复杂的注释就能读懂整个过程的逻辑。<br>它的调用过程大概是这样的：</p>
-<p><code>Observable.just(params)
-     .map(fun)
-     .subscribeOn(thread)
-     .observeOn(thread)
-     .suscribe(new  Action{
-         public void call(params){
-         }
-       } );</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.map(fun)&#10;.subscribeOn(thread)&#10;.observeOn(thread)&#10;.suscribe(new  Action&#123;&#10;    public void call(params)&#123;&#10;    &#125;&#10;  &#125; )</span><br></pre></td></tr></table></figure>
 <p>可以看到，整个调用过程的逻辑是非常清晰的。</p>
 <p>3.强大的map和filter功能。</p>
 
