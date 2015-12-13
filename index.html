@@ -163,7 +163,7 @@
   
     <div class="article-meta">
       <a href="/2015/12/13/rxJava详解/" class="article-date">
-  	<time datetime="2015-12-13T09:01:03.000Z" itemprop="datePublished">2015-12-13</time>
+  	<time datetime="2015-12-13T09:06:57.000Z" itemprop="datePublished">2015-12-13</time>
 </a>
     </div>
   
@@ -189,9 +189,9 @@
 <p>具体的就不再展开。</p>
 <p>2.<strong>rxJava的重要类和接口</strong><br>rxJava中最重要的几个接口和类的关系理清楚时你就将明白它是如何实现观察者模式。<br>（1）Observable类 被观察者<br>（2）Observer接口  观察者<br>（3）Subscribe类   订阅者，注意这个类是Observable类的子<br>类，同时又是Observer的实现类。这点可能有些奇怪，我们暂且不去深究这样设计的意义。<br>（4）Function接口  实现函数式编程中对应的函数参数<br>（5）Action接口       Function的子接口，起到简化使用的作用<br>由名字就可以知道前几个关键类在观察者模式对应的地位。后面两个接口在使用时再仔细研究。<br>暂且就到这里。</p>
 <p>3.<strong>函数式编程思想</strong><br>如果没有接触过函数式编程，直接学习rxJava会非常难以适应其中大量的陌生概念。这里主要说明几个我目前接触到的相关概念。<br>（1）高阶函数<br>    以函数为参数的函数被称为高阶函数，在Java中没有对应的概念，为了实现高阶函数，我们经常使用匿名内部类来替代函数传入，这让Java代码变得非常臃肿，在Java8中引入lambda表达式就是实现了这个功能，想要深入学习的同学可以再深入的去砍一下lambda表达式的相关内容。<br>（2）闭包映射<br>当一个结构满足闭包性质时，即对它进行的一系列操作返回的都是另一个相应的结构时，我们就可以以此为基础构建更大更抽象的结构。这其实就是封装的概念，在Java中直接的体现就是类和对象，一个对象我们去操作它的成员，最终返回同一个类的另一种对象，我们把这个类当做砖从而去造大房子，map和filter就作用在这类结构上，理论上我们可以使用它们构造出所有我们需要的砖。</p>
-<h2 id="三-Why？_rxjava的实现原理">三.Why？　rxjava的实现原理</h2><p>这一部分内容留置以为研究。</p>
+<h2 id="三-Why？_rxjava的实现原理">三.Why？　rxjava的实现原理</h2><p>这一部分内容留置以后研究。</p>
 <p>参考资料<br><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a> </p>
-<p>Github<br>[rxJava] (<a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">https://github.com/ReactiveX/RxJava</a>)<br><a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="external">rxAndroid</a></p>
+<p>Github<br><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">rxJava</a><br><a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="external">rxAndroid</a></p>
 <p>在AndroidStudio中使用lambda表达式<br><a href="https://github.com/evant/gradle-retrolambda" target="_blank" rel="external">gradle-retrolambda</a></p>
 
       
