@@ -159,6 +159,79 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Retrofit学习记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/15/Retrofit学习记录/" class="article-date">
+  	<time datetime="2015-12-15T13:27:28.000Z" itemprop="datePublished">2015-12-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/15/Retrofit学习记录/">Retrofit学习记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近花了点时间了解学习了一下Retrofit库，现在记录一下。</p>
+<p>###What 　Retrofit是什么？有什么用？<br>Retrofit是一个Android下非常流行的网络请求库。<br>按照官方的介绍就是</p>
+<blockquote>
+<p>A type-safe REST client for Android and Java</p>
+</blockquote>
+<p>注意，Retrofit是一个基于==REST==的客户端请求库。<br>在学习Retrofit之前我们需要了解REST的概念，这也是使用这个库最大的难点，我大部分时间也都花在这个部分上。</p>
+<p>那么，现在我们来介绍REST这个概念。<br>REST全称为Representation State Transfer，翻译过来就是表征状态转移。<br>它是一种特定的互联网架构，符合这种架构的软件，我们称它为==<em>RESTful</em>==<br>光看名字非常的抽象，但是我理解REST这个概念就是通过一个博客上对这个名字的解析。下面用我的语言重新来介绍一遍上面几个名词。</p>
+<p>####Representation<br>这个词是最不好理解的，要弄懂这个词的意思，首先我们要弄明白Resource的概念。<br>Resource，即资源，我们现在使用互联网其实就是在访问互联网上的一个个资源并组织使用它们。不管是客户端还是直接通过浏览器，我们要上网需要做的事情是什么？通过网络获取特定的信息并显示为符合我们要求的形式给我们阅读。<br>在这个过程中，首先通过URI（Uniform Resource Identifier）即唯一定位这个资源的标识符来访问这个资源，这个资源就是在服务器中存储的信息，它可以是图片、视频、任何东西，总之就是一些被保存在硬盘里的文件，我们在访问了它们之后，服务器按照规定的格式将这个文件返回给访问者，这样就完成了资源的调用。<br>那么Representation在这个过程中是什么样的一个概念呢？<br>在我们使用URI的过程中，我们并不指定这个资源的格式，因为URI仅仅代表这个文件的访问路径，而这个路径不应该包含这个资源它本身的格式和内容，因此Representation（表征）即指这个资源的表示形式。这种形式可以是JPG、JSON、XML、HTML、AVI。</p>
+<p>####State Transfer<br>通过上面的阅读，我们知道了在访问过程中我们使用URI仅仅只是得到了这个资源，那么将这个资源转换成Represtation的这个过程即为State Transfer（状态转换）。这个转换过程发生在服务器上，我们在客户端通过HTTP协议向服务器发送请求去控制这个过程，要求服务器返回我们希望的内容。</p>
+<p>###综上所诉<br>我直接引用我学习的博客中的总结，我认为非常的精炼。</p>
+<blockquote>
+<p>综合上面的解释，我们总结一下什么是RESTful架构：<br>　　（1）每一个URI代表一种资源；<br>　　（2）客户端和服务器之间，传递这种资源的某种表现层；<br>　　（3）客户端通过四个HTTP动词，对服务器端资源进行操作，实现”表现层状态转化”。</p>
+</blockquote>
+<p>###How 　Retrofit的使用<br>理解了REST的概念，接下来就可以学习Retrofit的具体使用了。<br>使用步骤</p>
+<p>####1.创建一个Retrofit实例</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">public</span> static final <span class="keyword">String </span><span class="keyword">BASE_URL </span>= <span class="string">"http://api.myservice.com"</span><span class="comment">;</span></span><br><span class="line"><span class="label">Retrofit</span> retrofit = new Retrofit.<span class="keyword">Builder()</span><br><span class="line"></span>    .<span class="keyword">baseUrl(BASE_URL)</span><br><span class="line"></span>    .<span class="keyword">addConverterFactory(GsonConverterFactory.create())</span><br><span class="line"></span>    .<span class="keyword">build();</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，根据REST架构，首先我们确定我们所访问的Api的资源基本URI，这个URI是这一批接口的公共前缀。<br>我们要使用的具体的每一个Api都是BASE_URL/xxx/xxx这种形式。<br>接下来创建一个Retrofit实例，将这个BaseURL传入，并指定Retrofit解析这个资源使用的解析库，具体使用哪一个需要具体分析，这里不再叙述。</p>
+<blockquote>
+<p>有如下的解析库可以选择：<br>Converter    Library<br>Gson    com.squareup.retrofit:converter-gson:2.0.0-beta2<br>Jackson    com.squareup.retrofit:converter-jackson:2.0.0-beta1<br>Moshi    com.squareup.retrofit:converter-moshi:2.0.0-beta1<br>Protobuf    com.squareup.retrofit:converter-protobuf:2.0.0-beta1<br>Wire    com.squareup.retrofit:converter-wire:2.0.0-beta1<br>Simple XML    com.squareup.retrofit:converter-simplexml:2.0.0-beta1</p>
+</blockquote>
+<p>这样，我们就创建了一个符合我们要求的retrofit实例了。</p>
+<p>####2.根据我们使用接口返回数据的格式创建对应的实体类<br>这里我推荐使用一款Android Studio插件GsonFormat，根据字符串一键生成对应的实体类。</p>
+<p>####3.创建对应的接口</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-rxJava详解" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
