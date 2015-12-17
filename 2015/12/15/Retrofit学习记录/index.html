@@ -6,30 +6,30 @@
   <title>Retrofit学习记录 | Hexo|王祖亮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近花了点时间了解学习了一下Retrofit库，现在记录一下。
-What 　Retrofit是什么？有什么用？Retrofit是一个Android下非常流行的网络请求库。按照官方的介绍就是
+一.What 　Retrofit是什么？有什么用？Retrofit是一个Android下非常流行的网络请求库。按照官方的介绍就是
 
 A type-safe REST client for Android and Java
 
-注意，Retrofit是一个基于==REST==的客户端请求库。在学习Retrofit之前我们需要了解REST的概念">
+注意，Retrofit是一个基于==REST==的客户端请求库。在学习Retrofit之前我们需要了解REST的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Retrofit学习记录">
 <meta property="og:url" content="http://yoursite.com/2015/12/15/Retrofit学习记录/index.html">
 <meta property="og:site_name" content="Hexo|王祖亮">
 <meta property="og:description" content="最近花了点时间了解学习了一下Retrofit库，现在记录一下。
-What 　Retrofit是什么？有什么用？Retrofit是一个Android下非常流行的网络请求库。按照官方的介绍就是
+一.What 　Retrofit是什么？有什么用？Retrofit是一个Android下非常流行的网络请求库。按照官方的介绍就是
 
 A type-safe REST client for Android and Java
 
-注意，Retrofit是一个基于==REST==的客户端请求库。在学习Retrofit之前我们需要了解REST的概念">
-<meta property="og:updated_time" content="2015-12-17T09:52:36.000Z">
+注意，Retrofit是一个基于==REST==的客户端请求库。在学习Retrofit之前我们需要了解REST的">
+<meta property="og:updated_time" content="2015-12-17T09:55:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Retrofit学习记录">
 <meta name="twitter:description" content="最近花了点时间了解学习了一下Retrofit库，现在记录一下。
-What 　Retrofit是什么？有什么用？Retrofit是一个Android下非常流行的网络请求库。按照官方的介绍就是
+一.What 　Retrofit是什么？有什么用？Retrofit是一个Android下非常流行的网络请求库。按照官方的介绍就是
 
 A type-safe REST client for Android and Java
 
-注意，Retrofit是一个基于==REST==的客户端请求库。在学习Retrofit之前我们需要了解REST的概念">
+注意，Retrofit是一个基于==REST==的客户端请求库。在学习Retrofit之前我们需要了解REST的">
   
     <link rel="alternative" href="/atom.xml" title="Hexo|王祖亮" type="application/atom+xml">
   
@@ -207,7 +207,7 @@ A type-safe REST client for Android and Java
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近花了点时间了解学习了一下Retrofit库，现在记录一下。</p>
-<h3 id="What_Retrofit是什么？有什么用？">What 　Retrofit是什么？有什么用？</h3><p>Retrofit是一个Android下非常流行的网络请求库。<br>按照官方的介绍就是</p>
+<h2 id="一-What_Retrofit是什么？有什么用？">一.What 　Retrofit是什么？有什么用？</h2><p>Retrofit是一个Android下非常流行的网络请求库。<br>按照官方的介绍就是</p>
 <blockquote>
 <p>A type-safe REST client for Android and Java</p>
 </blockquote>
@@ -219,7 +219,7 @@ A type-safe REST client for Android and Java
 <blockquote>
 <p>综合上面的解释，我们总结一下什么是RESTful架构：<br>　　（1）每一个URI代表一种资源；<br>　　（2）客户端和服务器之间，传递这种资源的某种表现层；<br>　　（3）客户端通过四个HTTP动词，对服务器端资源进行操作，实现”表现层状态转化”。</p>
 </blockquote>
-<h3 id="How_Retrofit的使用">How 　Retrofit的使用</h3><p>理解了REST的概念，接下来就可以学习Retrofit的具体使用了。<br>使用步骤</p>
+<h2 id="二-How_Retrofit的使用">二.How 　Retrofit的使用</h2><p>理解了REST的概念，接下来就可以学习Retrofit的具体使用了。<br>使用步骤</p>
 <h4 id="1-创建一个Retrofit实例">1.创建一个Retrofit实例</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">public</span> static final <span class="keyword">String </span><span class="keyword">BASE_URL </span>= <span class="string">"http://api.myservice.com"</span><span class="comment">;</span></span><br><span class="line"><span class="label">Retrofit</span> retrofit = new Retrofit.<span class="keyword">Builder()</span><br><span class="line"></span>    .<span class="keyword">baseUrl(BASE_URL)</span><br><span class="line"></span>    .<span class="keyword">addConverterFactory(GsonConverterFactory.create())</span><br><span class="line"></span>    .<span class="keyword">build();</span></span><br></pre></td></tr></table></figure>
 <p>可以看到，根据REST架构，首先我们确定我们所访问的Api的资源基本URI，这个URI是这一批接口的公共前缀。<br>我们要使用的具体的每一个Api都是BASE_URL/xxx/xxx这种形式。<br>接下来创建一个Retrofit实例，将这个BaseURL传入，并指定Retrofit解析这个资源使用的解析库，具体使用哪一个需要具体分析，这里不再叙述。</p>
 <blockquote>
