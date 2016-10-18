@@ -5,25 +5,28 @@
   
   <title>Hexo|王祖亮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="编译原理实验语法分析&amp;amp;词法分析
-Task 1识别词法错误并输出错误信息要求:识别八进制&amp;amp;十六进制 不规范报错识别指数形式浮点数 不规范报错识别 “//“ “/ /“注释 并过滤
-Task2识别语法错误并输出错误信息
-flex使用命令：(1)flex src.l  对给定的flex文件生成对应的c文件注：flex对文件的space非常敏感，不要随便在代码里加空格，否则非常可能不能正常">
+  <meta name="description" content="#Gradle Share
+1.gradle概念groovy基本语法gradle、project、taskgradlew  gradle wrapper插件 plugin 概念、作用
+2.gradle命令cleanbulidtasks（Android Studio查看）
+https://github.com/tfnico/vim-gradle让vim能识别gradle语法
+feature1.Exe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo|王祖亮">
-<meta property="og:url" content="http://yoursite.com/2016/10/18/编译原理实验/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/10/18/share/index.html">
 <meta property="og:site_name" content="Hexo|王祖亮">
-<meta property="og:description" content="编译原理实验语法分析&amp;amp;词法分析
-Task 1识别词法错误并输出错误信息要求:识别八进制&amp;amp;十六进制 不规范报错识别指数形式浮点数 不规范报错识别 “//“ “/ /“注释 并过滤
-Task2识别语法错误并输出错误信息
-flex使用命令：(1)flex src.l  对给定的flex文件生成对应的c文件注：flex对文件的space非常敏感，不要随便在代码里加空格，否则非常可能不能正常">
-<meta property="og:updated_time" content="2016-10-18T14:04:48.000Z">
+<meta property="og:description" content="#Gradle Share
+1.gradle概念groovy基本语法gradle、project、taskgradlew  gradle wrapper插件 plugin 概念、作用
+2.gradle命令cleanbulidtasks（Android Studio查看）
+https://github.com/tfnico/vim-gradle让vim能识别gradle语法
+feature1.Exe">
+<meta property="og:updated_time" content="2016-10-18T14:07:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo|王祖亮">
-<meta name="twitter:description" content="编译原理实验语法分析&amp;amp;词法分析
-Task 1识别词法错误并输出错误信息要求:识别八进制&amp;amp;十六进制 不规范报错识别指数形式浮点数 不规范报错识别 “//“ “/ /“注释 并过滤
-Task2识别语法错误并输出错误信息
-flex使用命令：(1)flex src.l  对给定的flex文件生成对应的c文件注：flex对文件的space非常敏感，不要随便在代码里加空格，否则非常可能不能正常">
+<meta name="twitter:description" content="#Gradle Share
+1.gradle概念groovy基本语法gradle、project、taskgradlew  gradle wrapper插件 plugin 概念、作用
+2.gradle命令cleanbulidtasks（Android Studio查看）
+https://github.com/tfnico/vim-gradle让vim能识别gradle语法
+feature1.Exe">
   
     <link rel="alternative" href="/atom.xml" title="Hexo|王祖亮" type="application/atom+xml">
   
@@ -167,11 +170,11 @@ flex使用命令：(1)flex src.l  对给定的flex文件生成对应的c文件�
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-编译原理实验" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-share" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/18/编译原理实验/" class="article-date">
-  	<time datetime="2016-10-18T14:04:48.000Z" itemprop="datePublished">2016-10-18</time>
+      <a href="/2016/10/18/share/" class="article-date">
+  	<time datetime="2016-10-18T14:07:32.000Z" itemprop="datePublished">2016-10-18</time>
 </a>
     </div>
   
@@ -182,11 +185,21 @@ flex使用命令：(1)flex src.l  对给定的flex文件生成对应的c文件�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="编译原理实验">编译原理实验</h1><p>语法分析&amp;词法分析</p>
-<p>Task 1<br>识别词法错误并输出错误信息<br>要求:<br>识别八进制&amp;十六进制 不规范报错<br>识别指数形式浮点数 不规范报错<br>识别 “//“ “/<em> </em>/“注释 并过滤</p>
-<p>Task2<br>识别语法错误并输出错误信息</p>
-<p>flex使用命令：<br>(1)flex src.l  对给定的flex文件生成对应的c文件<br>注：flex对文件的space非常敏感，不要随便在代码里加空格，否则非常可能不能正常输出。<br>(2)gcc lex.yy.c  -ll -o main 编译c文件生成可执行文件，mac下使用-ll<br>注：因为OSX下的gcc实际上是clang，所以命令和linux下有出入。<br>在mac下man gcc会提示找不到gcc，因为实际这个gcc是clang<br>(3)./main srcFile 把源文件传递给语法分析生成器</p>
-<p>正则表达式复习：<br>(1)”.”表示通配符，匹配除了“\n”以外的任何一个字符<br>(2)”[]”表示字符集，即括号内一个字符匹配到则就算匹配到这个字符集。缩写表示法[0-9a-zA-Z]。”^”用在方括号内表示补集。<br>(3)”^”用在方括号外会匹配一行的开头。符号”$”用于匹配一行的结尾。“&lt;<eof>&gt;”匹配文件的结尾。<br>(4)符号”{}”多重含义。A{5}表示AAAAA。A{1，3}表示A、AA或者AAA，即1到3个A。此外，定义的名字要在花括号内，如{letter}。<br>(5)“<em>”表示闭包操作，匹配零个或多个表达式，如X</em>表示零个或多个X<br>(6)“+”表示正闭包操作，匹配一个或多个表达式，用法同上。<br>(7)“?”表示零个或者一个表达式，即有或者无。<br>注：”?”、”*”、”+”都仅仅只对左边临近的那个表达式起效。如abc?表示ab和零个或者多个c<br>(8)”|”表示选择操作,如a|b|c表示a或者b或者c。<br>(9)”\”表示转义字符,与和C语言类似。<br>(10)“””表示忽略转义，如“\n”代表字符串”\n”而不是换行符<br>(11)”/“表示查看输入字符的上下文，如0/1匹配01串中的0而不匹配02中的0。<br>(12)其余剩下的所有字符都表示其本身。</eof></p>
+        <p>#Gradle Share</p>
+<p>1.gradle概念<br>groovy基本语法<br>gradle、project、task<br>gradlew  gradle wrapper<br>插件 plugin 概念、作用</p>
+<p>2.gradle命令<br>clean<br>bulid<br>tasks（Android Studio查看）</p>
+<p><a href="https://github.com/tfnico/vim-gradle" target="_blank" rel="external">https://github.com/tfnico/vim-gradle</a><br>让vim能识别gradle语法</p>
+<p>feature<br>1.Executing multiple tasks  执行多个task，每个只执行一次<br>   gradle  task1 task2<br>2.Excluding tasks           可以排除某个task不执行<br>    gradle task2 -x task1<br>    task2 dependent task1<br>3.Continuing the build when a failure occurs            忽略错误继续执行<br>   可能出现其它问题<br>4.Task name abbreviation<br>   gradle本身可以识别缩写<br>   如执行task wangzuliang<br>   gradle wzl<br>5.Selecting which build to execute<br>  可以把文件当成参数传递<br>  gradle -b zuliangwang/file1 task1<br>6.Forcing tasks to execute<br>  自带增量编译 gradle sdk里提供的task大部分都能增量编译<br>  每次 gradle task1 只编译增量部分<br>7.gradle自带一些编译时工具帮助分析<br>  详细<br>  <a href="https://docs.gradle.org/current/userguide/project_reports_plugin.html" target="_blank" rel="external">https://docs.gradle.org/current/userguide/project_reports_plugin.html</a></p>
+<ol>
+<li>Dry Run<br>类似打Log观察生命周期，不执行task中的代码，仅显示执行顺序<br>gradle -m task1</li>
+</ol>
+<p>3.build.gradle setting.gralde<br>常见属性分析<br>看懂Android Projecct中的build.gradle<br>Porject:settings.gradle和build.gradle<br>task的执行顺序</p>
+<p>4.<br>gradle脚本书写<br>task simpleTask &lt;&lt; {<br>    …<br>}</p>
+<p>gradle blog<br><a href="http://www.infoq.com/cn/articles/android-in-depth-gradle?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk" target="_blank" rel="external">http://www.infoq.com/cn/articles/android-in-depth-gradle?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk</a></p>
+<p><a href="https://segmentfault.com/a/1190000004234712?_ea=538654" target="_blank" rel="external">https://segmentfault.com/a/1190000004234712?_ea=538654</a></p>
+<p>gradle官方文档<br><a href="https://docs.gradle.org/current/userguide/overview.html" target="_blank" rel="external">https://docs.gradle.org/current/userguide/overview.html</a><br>不仅仅是android<br>web js   java app<br>核心 build your project</p>
+<p>Groovy<br>Gradle’s build scripts are written in Groovy, not XML. But unlike other approaches this is not for simply exposing the raw scripting power of a dynamic language. That would just lead to a very difficult to maintain build. The whole design of Gradle is oriented towards being used as a language, not as a rigid framework. And Groovy is our glue that allows you to tell your individual story with the abstractions Gradle (or you) provide. Gradle provides some standard stories but they are not privileged in any form. This is for us a major distinguishing feature compared to other declarative build systems. Our Groovy support is not just sugar coating. The whole Gradle API is fully Groovy-ized. Adding Groovy results in an enjoyable and productive experience.</p>
+<p>groovy API手册<br><a href="http://docs.groovy-lang.org/latest/html/groovy-jdk/index-all.html" target="_blank" rel="external">http://docs.groovy-lang.org/latest/html/groovy-jdk/index-all.html</a></p>
 
       
     </div>
@@ -196,18 +209,9 @@ flex使用命令：(1)flex src.l  对给定的flex文件生成对应的c文件�
     
 <nav id="article-nav">
   
-    <a href="/2016/10/18/share/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/26/okhttp源码分析/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">okhttp源码分析</div>
+    <a href="/2016/10/18/编译原理实验/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -236,7 +240,7 @@ flex使用命令：(1)flex src.l  对给定的flex文件生成对应的c文件�
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="编译原理实验" data-title="" data-url="http://yoursite.com/2016/10/18/编译原理实验/"></div>
+	<div class="ds-thread" data-thread-key="share" data-title="" data-url="http://yoursite.com/2016/10/18/share/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

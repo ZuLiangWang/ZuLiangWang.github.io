@@ -159,6 +159,60 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-share" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/18/share/" class="article-date">
+  	<time datetime="2016-10-18T14:07:32.000Z" itemprop="datePublished">2016-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Gradle Share</p>
+<p>1.gradle概念<br>groovy基本语法<br>gradle、project、task<br>gradlew  gradle wrapper<br>插件 plugin 概念、作用</p>
+<p>2.gradle命令<br>clean<br>bulid<br>tasks（Android Studio查看）</p>
+<p><a href="https://github.com/tfnico/vim-gradle" target="_blank" rel="external">https://github.com/tfnico/vim-gradle</a><br>让vim能识别gradle语法</p>
+<p>feature<br>1.Executing multiple tasks  执行多个task，每个只执行一次<br>   gradle  task1 task2<br>2.Excluding tasks           可以排除某个task不执行<br>    gradle task2 -x task1<br>    task2 dependent task1<br>3.Continuing the build when a failure occurs            忽略错误继续执行<br>   可能出现其它问题<br>4.Task name abbreviation<br>   gradle本身可以识别缩写<br>   如执行task wangzuliang<br>   gradle wzl<br>5.Selecting which build to execute<br>  可以把文件当成参数传递<br>  gradle -b zuliangwang/file1 task1<br>6.Forcing tasks to execute<br>  自带增量编译 gradle sdk里提供的task大部分都能增量编译<br>  每次 gradle task1 只编译增量部分<br>7.gradle自带一些编译时工具帮助分析<br>  详细<br>  <a href="https://docs.gradle.org/current/userguide/project_reports_plugin.html" target="_blank" rel="external">https://docs.gradle.org/current/userguide/project_reports_plugin.html</a></p>
+<ol>
+<li>Dry Run<br>类似打Log观察生命周期，不执行task中的代码，仅显示执行顺序<br>gradle -m task1</li>
+</ol>
+<p>3.build.gradle setting.gralde<br>常见属性分析<br>看懂Android Projecct中的build.gradle<br>Porject:settings.gradle和build.gradle<br>task的执行顺序</p>
+<p>4.<br>gradle脚本书写<br>task simpleTask &lt;&lt; {<br>    …<br>}</p>
+<p>gradle blog<br><a href="http://www.infoq.com/cn/articles/android-in-depth-gradle?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk" target="_blank" rel="external">http://www.infoq.com/cn/articles/android-in-depth-gradle?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk</a></p>
+<p><a href="https://segmentfault.com/a/1190000004234712?_ea=538654" target="_blank" rel="external">https://segmentfault.com/a/1190000004234712?_ea=538654</a></p>
+<p>gradle官方文档<br><a href="https://docs.gradle.org/current/userguide/overview.html" target="_blank" rel="external">https://docs.gradle.org/current/userguide/overview.html</a><br>不仅仅是android<br>web js   java app<br>核心 build your project</p>
+<p>Groovy<br>Gradle’s build scripts are written in Groovy, not XML. But unlike other approaches this is not for simply exposing the raw scripting power of a dynamic language. That would just lead to a very difficult to maintain build. The whole design of Gradle is oriented towards being used as a language, not as a rigid framework. And Groovy is our glue that allows you to tell your individual story with the abstractions Gradle (or you) provide. Gradle provides some standard stories but they are not privileged in any form. This is for us a major distinguishing feature compared to other declarative build systems. Our Groovy support is not just sugar coating. The whole Gradle API is fully Groovy-ized. Adding Groovy results in an enjoyable and productive experience.</p>
+<p>groovy API手册<br><a href="http://docs.groovy-lang.org/latest/html/groovy-jdk/index-all.html" target="_blank" rel="external">http://docs.groovy-lang.org/latest/html/groovy-jdk/index-all.html</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-编译原理实验" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
