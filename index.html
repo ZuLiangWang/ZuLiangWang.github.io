@@ -159,6 +159,52 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编译原理实验" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/19/编译原理实验/" class="article-date">
+  	<time datetime="2016-10-19T11:43:29.000Z" itemprop="datePublished">2016-10-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="编译原理实验">编译原理实验</h1><p>语法分析&amp;词法分析</p>
+<p>Task 1<br>识别词法错误并输出错误信息<br>要求:<br>识别八进制&amp;十六进制 不规范报错<br>识别指数形式浮点数 不规范报错<br>识别 “//“ “/<em> </em>/“注释 并过滤</p>
+<p>Task2<br>识别语法错误并输出错误信息</p>
+<p>flex使用命令：<br>(1)flex src.l  对给定的flex文件生成对应的c文件<br>注：flex对文件的space非常敏感，不要随便在代码里加空格，否则非常可能不能正常输出。<br>(2)gcc lex.yy.c  -ll -o main 编译c文件生成可执行文件，mac下使用-ll<br>注：因为OSX下的gcc实际上是clang，所以命令和linux下有出入。<br>在mac下man gcc会提示找不到gcc，因为实际这个gcc是clang<br>(3)./main srcFile 把源文件传递给语法分析生成器</p>
+<p>bison使用命令：<br>(1)flex lexical.l  语法分析依赖于词法分析的输出，因此首先要得到词法分析器。<br>(2)bison -d syntax.y 生成语法分析文件，-d参数是令其生成对应的.c文件和.h文件。<br>注：在bison源文件syntax.y中要在引用词法分析器文件，#include “lex.yy.c”<br>(3)为了能够使用在bison文件中定义的语法符号，在flex生成的词法分析器文件中也需要引用bison生成的文件，#include “syntax.tab.h”<br>(4)完成依赖关系的配置，编译链接词法分析器文件和语法分析文件，输入gcc -ll syntax.tab.c lex.yy.c -o scanner得到语法分析器。<br>(5)./scanner 根据代码输入相应的内容。</p>
+<p>正则表达式复习：<br>(1)”.”表示通配符，匹配除了“\n”以外的任何一个字符<br>(2)”[]”表示字符集，即括号内一个字符匹配到则就算匹配到这个字符集。缩写表示法[0-9a-zA-Z]。”^”用在方括号内表示补集。<br>(3)”^”用在方括号外会匹配一行的开头。符号”$”用于匹配一行的结尾。“&lt;<eof>&gt;”匹配文件的结尾。<br>(4)符号”{}”多重含义。A{5}表示AAAAA。A{1，3}表示A、AA或者AAA，即1到3个A。此外，定义的名字要在花括号内，如{letter}。<br>(5)”*“表示闭包操作，匹配零个或多个表达式，如X*表示零个或多个X。<br>(6)“+”表示正闭包操作，匹配一个或多个表达式，用法同上。<br>(7)“?”表示零个或者一个表达式，即有或者无。<br>注：”?”、”*”、”+”都仅仅只对左边临近的那个表达式起效。如abc?表示ab和零个或者多个c<br>(8)”|”表示选择操作,如a|b|c表示a或者b或者c。<br>(9)”\”表示转义字符,与和C语言类似。<br>(10)“””表示忽略转义，如“\n”代表字符串”\n”而不是换行符<br>(11)”/“表示查看输入字符的上下文，如0/1匹配01串中的0而不匹配02中的0。<br>(12)其余剩下的所有字符都表示其本身。</eof></p>
+<p><img src="/Users/zuliangwang/Documents/blog/source/img/zz.png" alt="正则优先级"><br><a href="http://tool.oschina.net/regex/" target="_blank" rel="external">正则在线测试工具</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-share" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -188,50 +234,6 @@
 <p>gradle官方文档<br><a href="https://docs.gradle.org/current/userguide/overview.html" target="_blank" rel="external">https://docs.gradle.org/current/userguide/overview.html</a><br>不仅仅是android<br>web js   java app<br>核心 build your project</p>
 <p>Groovy<br>Gradle’s build scripts are written in Groovy, not XML. But unlike other approaches this is not for simply exposing the raw scripting power of a dynamic language. That would just lead to a very difficult to maintain build. The whole design of Gradle is oriented towards being used as a language, not as a rigid framework. And Groovy is our glue that allows you to tell your individual story with the abstractions Gradle (or you) provide. Gradle provides some standard stories but they are not privileged in any form. This is for us a major distinguishing feature compared to other declarative build systems. Our Groovy support is not just sugar coating. The whole Gradle API is fully Groovy-ized. Adding Groovy results in an enjoyable and productive experience.</p>
 <p>groovy API手册<br><a href="http://docs.groovy-lang.org/latest/html/groovy-jdk/index-all.html" target="_blank" rel="external">http://docs.groovy-lang.org/latest/html/groovy-jdk/index-all.html</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-编译原理实验" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/18/编译原理实验/" class="article-date">
-  	<time datetime="2016-10-18T14:04:48.000Z" itemprop="datePublished">2016-10-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="编译原理实验">编译原理实验</h1><p>语法分析&amp;词法分析</p>
-<p>Task 1<br>识别词法错误并输出错误信息<br>要求:<br>识别八进制&amp;十六进制 不规范报错<br>识别指数形式浮点数 不规范报错<br>识别 “//“ “/<em> </em>/“注释 并过滤</p>
-<p>Task2<br>识别语法错误并输出错误信息</p>
-<p>flex使用命令：<br>(1)flex src.l  对给定的flex文件生成对应的c文件<br>注：flex对文件的space非常敏感，不要随便在代码里加空格，否则非常可能不能正常输出。<br>(2)gcc lex.yy.c  -ll -o main 编译c文件生成可执行文件，mac下使用-ll<br>注：因为OSX下的gcc实际上是clang，所以命令和linux下有出入。<br>在mac下man gcc会提示找不到gcc，因为实际这个gcc是clang<br>(3)./main srcFile 把源文件传递给语法分析生成器</p>
-<p>正则表达式复习：<br>(1)”.”表示通配符，匹配除了“\n”以外的任何一个字符<br>(2)”[]”表示字符集，即括号内一个字符匹配到则就算匹配到这个字符集。缩写表示法[0-9a-zA-Z]。”^”用在方括号内表示补集。<br>(3)”^”用在方括号外会匹配一行的开头。符号”$”用于匹配一行的结尾。“&lt;<eof>&gt;”匹配文件的结尾。<br>(4)符号”{}”多重含义。A{5}表示AAAAA。A{1，3}表示A、AA或者AAA，即1到3个A。此外，定义的名字要在花括号内，如{letter}。<br>(5)“<em>”表示闭包操作，匹配零个或多个表达式，如X</em>表示零个或多个X<br>(6)“+”表示正闭包操作，匹配一个或多个表达式，用法同上。<br>(7)“?”表示零个或者一个表达式，即有或者无。<br>注：”?”、”*”、”+”都仅仅只对左边临近的那个表达式起效。如abc?表示ab和零个或者多个c<br>(8)”|”表示选择操作,如a|b|c表示a或者b或者c。<br>(9)”\”表示转义字符,与和C语言类似。<br>(10)“””表示忽略转义，如“\n”代表字符串”\n”而不是换行符<br>(11)”/“表示查看输入字符的上下文，如0/1匹配01串中的0而不匹配02中的0。<br>(12)其余剩下的所有字符都表示其本身。</eof></p>
 
       
     </div>
