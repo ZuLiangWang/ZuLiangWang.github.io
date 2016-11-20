@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android Handler机制总结 | Hexo|王祖亮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.What&amp;#xFF1F;
+Handler&amp;#x673A;&amp;#x5236;&amp;#x662F;Android&amp;#x4E2D;&amp;#x7684;&amp;#x7EBF;&amp;#x7A0B;&amp;#x95F4;&amp;#x901A;&amp;#x4FE1;&amp;#x65B9;&amp;#x5F0F;&amp;#x3002;&amp;#x5728;Android&amp;#x4E2D;&amp;#x7531;&amp;#x4E8E;&amp;#x4E3B;&amp;#x7EBF;&amp;#x7A0B;&amp;#x6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Handler机制总结">
+<meta property="og:url" content="http://yoursite.com/2016/11/20/Android Handler机制总结/index.html">
+<meta property="og:site_name" content="Hexo|王祖亮">
+<meta property="og:description" content="1.What&amp;#xFF1F;
+Handler&amp;#x673A;&amp;#x5236;&amp;#x662F;Android&amp;#x4E2D;&amp;#x7684;&amp;#x7EBF;&amp;#x7A0B;&amp;#x95F4;&amp;#x901A;&amp;#x4FE1;&amp;#x65B9;&amp;#x5F0F;&amp;#x3002;&amp;#x5728;Android&amp;#x4E2D;&amp;#x7531;&amp;#x4E8E;&amp;#x4E3B;&amp;#x7EBF;&amp;#x7A0B;&amp;#x6">
+<meta property="og:updated_time" content="2016-11-20T14:28:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Handler机制总结">
+<meta name="twitter:description" content="1.What&amp;#xFF1F;
+Handler&amp;#x673A;&amp;#x5236;&amp;#x662F;Android&amp;#x4E2D;&amp;#x7684;&amp;#x7EBF;&amp;#x7A0B;&amp;#x95F4;&amp;#x901A;&amp;#x4FE1;&amp;#x65B9;&amp;#x5F0F;&amp;#x3002;&amp;#x5728;Android&amp;#x4E2D;&amp;#x7531;&amp;#x4E8E;&amp;#x4E3B;&amp;#x7EBF;&amp;#x7A0B;&amp;#x6">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo|王祖亮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/32.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/touxiang.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">王祖亮</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一只码畜</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZuLiangWang" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">Hust Cser / Android Coder      zuliangwang@hustunique.com  329851721@qq.com</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">王祖亮</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/touxiang.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">王祖亮</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一只码畜</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZuLiangWang" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Android Handler机制总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/20/Android Handler机制总结/" class="article-date">
+  	<time datetime="2016-11-20T13:33:20.000Z" itemprop="datePublished">2016-11-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android Handler机制总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.What&#xFF1F;</p>
+<p>Handler&#x673A;&#x5236;&#x662F;Android&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#x3002;&#x5728;Android&#x4E2D;&#x7531;&#x4E8E;&#x4E3B;&#x7EBF;&#x7A0B;&#x662F;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x6240;&#x6709;&#x6D89;&#x53CA;&#x5230;UI&#x7684;&#x64CD;&#x4F5C;&#x5FC5;&#x987B;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x3002;&#x8FD9;&#x5C31;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;&#x95F4;&#x9891;&#x7E41;&#x7684;&#x901A;&#x8BAF;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x5E38;&#x5E38;&#x9700;&#x8981;&#x4ECE;&#x7F51;&#x7EDC;&#x4E0A;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x518D;&#x52A0;&#x8F7D;&#x5230;UI&#x4E0A;&#x663E;&#x793A;&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#x5C31;&#x5FC5;&#x7136;&#x6D89;&#x53CA;&#x5230;&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x8BAF;&#xFF1A;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x521B;&#x5EFA;&#x65B0;&#x7EBF;&#x7A0B;-&gt;&#x5728;&#x65B0;&#x7EBF;&#x7A0B;&#x4E2D;&#x53D1;&#x8D77;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;-&gt;&#x83B7;&#x5F97;&#x7F51;&#x7EDC;&#x6570;&#x636E;-&gt;&#x540E;&#x53F0;&#x5904;&#x7406;&#x540E;&#x56DE;&#x8C03;&#x901A;&#x77E5;UI&#x7EBF;&#x7A0B;&#xFF08;&#x7EBF;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#xFF09;&#x5E76;&#x628A;&#x6570;&#x636E;&#x53D1;&#x9001;&#x7ED9;UI&#x7EBF;&#x7A0B;-&gt;UI&#x7EBF;&#x7A0B;&#x4E2D;&#x8C03;&#x7528;UI&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#xFF0C;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x5230;UI&#x4E0A;&#x3002;</p>
+<p>&#x5728;&#x4EE5;&#x4E0A;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6CA1;&#x6709;&#x4E00;&#x5957;&#x826F;&#x597D;&#x7684;&#x7EBF;&#x7A0B;&#x95F4;&#x901A;&#x8BAF;&#x65B9;&#x5F0F;&#x662F;&#x4E0D;&#x884C;&#x7684;&#xFF0C;Android&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;Handler&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x672C;&#x7BC7;&#x5C31;&#x6765;&#x603B;&#x7ED3;&#x56DE;&#x987E;Handler&#x76F8;&#x5173;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>2.How&#xFF1F;</p>
+<p>&#x5148;&#x6765;&#x770B;&#x4E00;&#x770B;Handler&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LooperThread</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Thread</span> {</span>  </span><br><span class="line">      public <span class="type">Handler</span> mHandler;  </span><br><span class="line">  </span><br><span class="line">      public void run() {  </span><br><span class="line">          <span class="type">Looper</span>.prepare();  </span><br><span class="line">  </span><br><span class="line">          mHandler = <span class="keyword">new</span> <span class="type">Handler</span>() {  </span><br><span class="line">              public void handleMessage(<span class="type">Message</span> msg) {  </span><br><span class="line">                  <span class="comment">// process incoming messages here  </span></span><br><span class="line">              }  </span><br><span class="line">          };  </span><br><span class="line">  </span><br><span class="line">          <span class="type">Looper</span>.loop();  </span><br><span class="line">      }  </span><br><span class="line">  }</span><br></pre></td></tr></table></figure>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x6301;&#x6709;&#x4E00;&#x4E2A;Handler&#xFF0C;&#x5728;run&#x65B9;&#x6CD5;&#x4E2D;&#x9996;&#x5148;&#x8981;&#x521D;&#x59CB;&#x5316;Looper&#xFF0C;&#x8C03;&#x7528;&#x5B83;&#x7684;prepare&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x5728;&#x4E0B;&#x9762;&#x5F00;&#x59CB;Looper&#x7684;&#x5FAA;&#x73AF;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;Looper&#x3001;Looper&#x548C;Handler&#x6709;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;&#xFF0C;&#x8FD9;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x8BB2;&#x3002;</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/20/Java线程锁总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java线程锁总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Android Handler机制总结" data-title="Android Handler机制总结" data-url="http://yoursite.com/2016/11/20/Android Handler机制总结/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 王祖亮
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
