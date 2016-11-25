@@ -14,7 +14,9 @@
 <meta property="og:description" content="Android&amp;#x7684;&amp;#x52A8;&amp;#x753B;&amp;#x53EF;&amp;#x4EE5;&amp;#x5206;&amp;#x4E3A;&amp;#x4E09;&amp;#x7C7B;&amp;#xFF1A;
 &amp;#xFF08;1&amp;#xFF09;View Animation&amp;#xFF1A;&amp;#x6700;&amp;#x65E9;&amp;#x7684;Android&amp;#x52A8;&amp;#x753B;&amp;#x5B9E;&amp;#x73B0;&amp;#xFF0C;&amp;#">
 <meta property="og:image" content="https://developer.android.com/images/animation/animation-linear.png">
-<meta property="og:updated_time" content="2016-11-25T11:10:50.000Z">
+<meta property="og:image" content="https://developer.android.com/images/animation/animation-nonlinear.png">
+<meta property="og:image" content="https://developer.android.com/images/animation/valueanimator.png">
+<meta property="og:updated_time" content="2016-11-25T12:48:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android动画总结">
 <meta name="twitter:description" content="Android&amp;#x7684;&amp;#x52A8;&amp;#x753B;&amp;#x53EF;&amp;#x4EE5;&amp;#x5206;&amp;#x4E3A;&amp;#x4E09;&amp;#x7C7B;&amp;#xFF1A;
@@ -249,7 +251,26 @@
 <li>Frame refresh delay&#xFF1A;&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x591A;&#x4E45;&#x5237;&#x65B0;&#x4E00;&#x6B21;&#x52A8;&#x753B;&#x5E27;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x6BCF;10ms&#x5237;&#x65B0;&#x4E00;&#x6B21;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#x5237;&#x65B0;&#x901F;&#x5EA6;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x7684;&#x7CFB;&#x7EDF;&#x6574;&#x4F53;&#x7684;&#x5FD9;&#x788C;&#x7A0B;&#x5E8F;&#x548C;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x3002;&#x8FD9;&#x4E2A;&#x610F;&#x601D;&#x5C31;&#x662F;&#x8BF4;&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5237;&#x65B0;&#x9891;&#x7387;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x5237;&#x65B0;&#x9891;&#x7387;&#x6700;&#x7EC8;&#x53D6;&#x51B3;&#x4E8E;&#x5E95;&#x5C42;&#x7684;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#xFF0C;&#x4F60;&#x7684;&#x9891;&#x7387;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;&#x53C2;&#x8003;&#x503C;&#x3002;</li>
 </ul>
 <p>&#x63A5;&#x4E0B;&#x6765;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x8BF4;&#x660E;&#x4E86;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x770B;&#x3002;</p>
+<blockquote>
+<p>First, let&#x2019;s go over how an animation works with a simple example. Figure 1 depicts a hypothetical object that is animated with its <code>x</code> property, which represents its horizontal location on a screen. The duration of the animation is set to 40 ms and the distance to travel is 40 pixels. Every 10 ms, which is the default frame refresh rate, the object moves horizontally by 10 pixels. At the end of 40ms, the animation stops, and the object ends at horizontal position 40. This is an example of an animation with linear interpolation, meaning the object moves at a constant speed.</p>
 <p><img src="https://developer.android.com/images/animation/animation-linear.png" alt=""></p>
+<p><strong>Figure 1.</strong> Example of a linear animation</p>
+</blockquote>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x9636;&#x6BB5;1&#x63CF;&#x8FF0;&#x4E00;&#x4E2A;&#x5047;&#x8BBE;&#x5BF9;&#x8C61;&#x5BF9;&#x5B83;&#x7684;x&#x5C5E;&#x6027;&#x503C;&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x5904;&#x7406;&#xFF0C;x&#x4EE3;&#x8868;&#x5B83;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x6C34;&#x5E73;&#x4F4D;&#x7F6E;&#x3002;&#x52A8;&#x753B;&#x95F4;&#x9694;&#x8BBE;&#x7F6E;&#x4E3A;40ms&#xFF0C;&#x79FB;&#x52A8;&#x7684;&#x8DDD;&#x79BB;&#x4E3A;40px&#x3002;&#x6BCF;&#x9694;10ms&#xFF08;&#x9ED8;&#x8BA4;&#x7684;&#x5E27;&#x5237;&#x65B0;&#x65F6;&#x95F4;&#xFF09;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x4E0A;&#x79FB;&#x52A8;10px&#x3002;&#x5728;40ms&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x8FD9;&#x4E2A;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x6C34;&#x5E73;&#x65B9;&#x5411;40px&#x5904;&#x3002;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4F7F;&#x7528;&#x4E86;&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x5668;&#xFF0C;&#x4EE3;&#x8868;&#x7740;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x4EE5;&#x5E38;&#x6570;&#x901F;&#x5EA6;&#x79FB;&#x52A8;&#x3002;</p>
+<blockquote>
+<p>You can also specify animations to have a non-linear interpolation. Figure 2 illustrates a hypothetical object that accelerates at the beginning of the animation, and decelerates at the end of the animation. The object still moves 40 pixels in 40 ms, but non-linearly. In the beginning, this animation accelerates up to the halfway point then decelerates from the halfway point until the end of the animation. As Figure 2 shows, the distance traveled at the beginning and end of the animation is less than in the middle.</p>
+<p><img src="https://developer.android.com/images/animation/animation-nonlinear.png" alt=""></p>
+<p><strong>Figure 2.</strong> Example of a non-linear animation</p>
+</blockquote>
+<p>&#x8FD9;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x975E;&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x5668;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x52A8;&#x753B;&#x4F7F;&#x7528;&#x975E;&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x5668;&#x3002;&#x5728;&#x4F8B;&#x5B50;2&#x4E2D;&#x5047;&#x8BBE;&#x5BF9;&#x8C61;&#x5728;&#x52A8;&#x753B;&#x5F00;&#x59CB;&#x9636;&#x6BB5;&#x52A0;&#x901F;&#xFF0C;&#x5728;&#x7ED3;&#x675F;&#x9636;&#x6BB5;&#x51CF;&#x901F;&#x3002;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x4ECD;&#x7136;&#x79FB;&#x52A8;40px&#x548C;40ms&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x662F;&#x7EBF;&#x6027;&#x7684;&#x3002;&#x8FD9;&#x4E2A;&#x52A8;&#x753B;&#x5728;&#x524D;&#x534A;&#x6BB5;&#x8DEF;&#x7A0B;&#x4E2D;&#x52A0;&#x901F;&#xFF0C;&#x5E76;&#x5728;&#x540E;&#x534A;&#x6BB5;&#x8DEF;&#x7A0B;&#x51CF;&#x901F;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x4F7F;&#x7528;&#x975E;&#x7EBF;&#x6027;&#x63D2;&#x503C;&#x5668;&#x7684;&#x52A8;&#x753B;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x52A8;&#x753B;&#x4E00;&#x5B9A;&#x7684;&#x901F;&#x5EA6;&#x53EF;&#x4EE5;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x503C;&#x3002;</p>
+<blockquote>
+<p>Let&#x2019;s take a detailed look at how the important components of the property animation system would calculate animations like the ones illustrated above. Figure 3 depicts how the main classes work with one another.</p>
+<p><img src="https://developer.android.com/images/animation/valueanimator.png" alt=""></p>
+<p><strong>Figure 3.</strong> How animations are calculated</p>
+</blockquote>
+<p>&#x73B0;&#x5728;&#x6765;&#x4ED4;&#x7EC6;&#x770B;&#x4E00;&#x770B;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x91CC;&#x7684;&#x91CD;&#x8981;&#x7EC4;&#x4EF6;&#x662F;&#x600E;&#x6837;&#x8BA1;&#x7B97;&#x52A8;&#x753B;&#x7684;&#xFF0C;&#x56FE;&#x7247;&#x63CF;&#x8FF0;&#x4E86;&#x5B83;&#x7684;&#x4E3B;&#x8981;&#x7684;&#x7C7B;&#x76F8;&#x4E92;&#x5DE5;&#x4F5C;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
 <blockquote>
 <p>&#x53C2;&#x8003;&#x7F51;&#x7AD9;&#xFF1A;</p>
 <p>Android&#x5B98;&#x65B9;&#x7F51;&#x7AD9;</p>
