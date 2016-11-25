@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android动画总结 | Hexo|王祖亮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android&amp;#x7684;&amp;#x52A8;&amp;#x753B;&amp;#x53EF;&amp;#x4EE5;&amp;#x5206;&amp;#x4E3A;&amp;#x4E09;&amp;#x7C7B;&amp;#xFF1A;
+&amp;#xFF08;1&amp;#xFF09;View Animation&amp;#xFF1A;&amp;#x6700;&amp;#x65E9;&amp;#x7684;Android&amp;#x52A8;&amp;#x753B;&amp;#x5B9E;&amp;#x73B0;&amp;#xFF0C;&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android动画总结">
+<meta property="og:url" content="http://yoursite.com/2016/11/25/Android动画总结/index.html">
+<meta property="og:site_name" content="Hexo|王祖亮">
+<meta property="og:description" content="Android&amp;#x7684;&amp;#x52A8;&amp;#x753B;&amp;#x53EF;&amp;#x4EE5;&amp;#x5206;&amp;#x4E3A;&amp;#x4E09;&amp;#x7C7B;&amp;#xFF1A;
+&amp;#xFF08;1&amp;#xFF09;View Animation&amp;#xFF1A;&amp;#x6700;&amp;#x65E9;&amp;#x7684;Android&amp;#x52A8;&amp;#x753B;&amp;#x5B9E;&amp;#x73B0;&amp;#xFF0C;&amp;#">
+<meta property="og:image" content="https://developer.android.com/images/animation/animation-linear.png">
+<meta property="og:updated_time" content="2016-11-25T11:10:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android动画总结">
+<meta name="twitter:description" content="Android&amp;#x7684;&amp;#x52A8;&amp;#x753B;&amp;#x53EF;&amp;#x4EE5;&amp;#x5206;&amp;#x4E3A;&amp;#x4E09;&amp;#x7C7B;&amp;#xFF1A;
+&amp;#xFF08;1&amp;#xFF09;View Animation&amp;#xFF1A;&amp;#x6700;&amp;#x65E9;&amp;#x7684;Android&amp;#x52A8;&amp;#x753B;&amp;#x5B9E;&amp;#x73B0;&amp;#xFF0C;&amp;#">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo|王祖亮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/32.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/touxiang.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">王祖亮</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一只码畜</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZuLiangWang" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">Hust Cser / Android Coder      zuliangwang@hustunique.com  329851721@qq.com</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">王祖亮</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/touxiang.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">王祖亮</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一只码畜</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZuLiangWang" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Android动画总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/25/Android动画总结/" class="article-date">
+  	<time datetime="2016-11-25T06:45:32.000Z" itemprop="datePublished">2016-11-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android动画总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android&#x7684;&#x52A8;&#x753B;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E09;&#x7C7B;&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;View Animation&#xFF1A;&#x6700;&#x65E9;&#x7684;Android&#x52A8;&#x753B;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x79CD;&#x52A8;&#x753B;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E;&#x7ED9;view&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#xFF08;2&#xFF09;Drawable Animation&#xFF1A;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;&#x5E7B;&#x706F;&#x7247;&#x653E;&#x6620;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x4E00;&#x5F20;&#x5F20;&#x5207;&#x6362;Drawable&#x3002;</p>
+<p>&#xFF08;3&#xFF09;Property Animation&#xFF1A;&#x6700;&#x540E;&#x51FA;&#x73B0;&#x7684;&#x52A8;&#x753B;&#x5B9E;&#x73B0;&#xFF0C;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#xFF0C;&#x5728;Android3.0&#x4EE5;&#x540E;&#x624D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x79CD;&#x52A8;&#x753B;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x7ED9;&#x4EFB;&#x4F55;Object&#x4F7F;&#x7528;&#xFF0C;&#x4E14;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#xFF0C;&#x652F;&#x6301;&#x5B9E;&#x73B0;&#x4EFB;&#x4F55;&#x6548;&#x679C;&#x7684;&#x52A8;&#x753B;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x6765;&#x770B;</p>
+<p>&#xFF08;1&#xFF09;View Animation</p>
+<p>Animation&#x7684;&#x65E2;&#x53EF;&#x4EE5;&#x4EE5;xml&#x7684;&#x5F62;&#x5F0F;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Java&#x4EE3;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x5148;&#x8BA9;&#x6211;&#x5199;&#x4E00;&#x4E2A;&#x6700;&#x7B80;&#x5355;&#x7684;&#x900F;&#x660E;&#x52A8;&#x753B;&#x7684;&#x4F7F;&#x7528;demo&#xFF1A;</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">set</span></span><br><span class="line">    <span class="attribute">android:duration</span>=<span class="value">&quot;200&quot;</span></span><br><span class="line">    <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">alpha</span> <span class="attribute">android:fromAlpha</span>=<span class="value">&quot;0&quot;</span></span><br><span class="line">    <span class="attribute">android:toAlpha</span>=<span class="value">&quot;1&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&#x4EE5;xml&#x7684;&#x5F62;&#x5F0F;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x52A8;&#x753B;&#x96C6;&#x5408;&#xFF0C;&#x8FD9;&#x4E2A;&#x96C6;&#x5408;&#x91CC;&#x76EE;&#x524D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x900F;&#x660E;&#x6E10;&#x53D8;&#x7684;&#x52A8;&#x753B;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;AnimationSet&#x662F;Animation&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x52A8;&#x753B;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x548C;&#x5B83;&#x7684;&#x540D;&#x5B57;&#x4E00;&#x6837;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x591A;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x52A8;&#x753B;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x66F4;&#x4E3A;&#x590D;&#x6742;&#x7684;&#x52A8;&#x753B;&#xFF0C;&#x6211;&#x6F14;&#x793A;&#x7684;demo&#x91CC;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6E10;&#x53D8;&#x52A8;&#x753B;&#x3002;</p>
+<p>xml&#x91CC;&#x7684;&#x8FD9;&#x51E0;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#x90FD;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#xFF0C;duration&#x5C31;&#x662F;&#x52A8;&#x753B;&#x7684;&#x603B;&#x65F6;&#x95F4;&#xFF0C;fromAlpha&#x548C;toAlpha&#x662F;&#x8D77;&#x59CB;&#x900F;&#x660E;&#x5EA6;&#x548C;&#x76EE;&#x6807;&#x900F;&#x660E;&#x5EA6;&#xFF0C;&#x8FD9;&#x4E2A;&#x52A8;&#x753B;&#x4F1A;&#x8BA9;&#x4E00;&#x4E2A;view&#x5728;200ms&#x7684;&#x65F6;&#x95F4;&#x5185;&#x7531;&#x900F;&#x660E;&#x53D8;&#x4E3A;&#x4E0D;&#x900F;&#x660E;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5728;Activity&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;Animation:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuliangwang.learnanimation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.<span class="type">AppCompatActivity</span>;</span><br><span class="line"><span class="keyword">import</span> android.os.<span class="type">Bundle</span>;</span><br><span class="line"><span class="keyword">import</span> android.view.<span class="type">View</span>;</span><br><span class="line"><span class="keyword">import</span> android.view.animation.<span class="type">Animation</span>;</span><br><span class="line"><span class="keyword">import</span> android.view.animation.<span class="type">AnimationSet</span>;</span><br><span class="line"><span class="keyword">import</span> android.view.animation.<span class="type">AnimationUtils</span>;</span><br><span class="line"><span class="keyword">import</span> android.widget.<span class="type">Button</span>;</span><br><span class="line"><span class="keyword">import</span> android.widget.<span class="type">TextView</span>;</span><br><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">AppCompatActivity</span> {</span></span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> void onCreate(<span class="type">Bundle</span> savedInstanceState) {</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(<span class="type">R</span>.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="type">TextView</span> textView = (<span class="type">TextView</span>) findViewById(<span class="type">R</span>.id.test_text);</span><br><span class="line">        <span class="type">Button</span> button = (<span class="type">Button</span>) findViewById(<span class="type">R</span>.id.test_button);</span><br><span class="line">        <span class="keyword">final</span> <span class="type">Animation</span> animation = <span class="type">AnimationUtils</span>.loadAnimation(getBaseContext(),<span class="type">R</span>.anim.test_anim);</span><br><span class="line"></span><br><span class="line">        button.setOnClickListener(<span class="keyword">new</span> <span class="type">View</span>.<span class="type">OnClickListener</span>() {</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            public void onClick(<span class="type">View</span> v) {</span><br><span class="line">                textView.startAnimation(animation);</span><br><span class="line">            }</span><br><span class="line">        });</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x4EE3;&#x7801;&#x5185;&#x5BB9;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x70B9;&#x51FB;Button&#x5C31;&#x53EF;&#x4EE5;&#x8BA9;&#x52A8;&#x753B;&#x4F5C;&#x7528;&#x4E8E;textview&#x3002;</p>
+<p>&#x6709;&#x4E00;&#x70B9;&#x4E00;&#x5B9A;&#x8981;&#x8BB0;&#x4F4F;&#xFF0C;View Animation&#x4E0D;&#x80FD;&#x4F7F;view&#x7684;&#x5B9E;&#x9645;&#x4F4D;&#x7F6E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x4E86;&#x5E73;&#x79FB;&#x52A8;&#x753B;&#xFF0C;&#x6700;&#x540E;&#x4F60;&#x770B;&#x5230;&#x7684;view&#x4F4D;&#x7F6E;&#x70B9;&#x51FB;&#x662F;&#x65E0;&#x6548;&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x4F60;&#x70B9;&#x51FB;&#x539F;&#x6765;&#x7684;&#x4F4D;&#x7F6E;&#x624D;&#x80FD;&#x89E6;&#x53D1;&#x89E6;&#x6478;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<p>View Animation&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;&#x5230;&#x8FD9;&#x91CC;&#x7ED3;&#x675F;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x52A8;&#x753B;&#xFF0C;Drawable Animation&#x3002;</p>
+<p>&#xFF08;2&#xFF09;Drawable Animation</p>
+<p>&#x6211;&#x67E5;&#x4E86;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#xFF0C;&#x53D1;&#x73B0;&#x8FD9;&#x4E2A;&#x52A8;&#x753B;&#x7528;&#x7684;&#x662F;&#x6BD4;&#x8F83;&#x5C11;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x573A;&#x666F;&#x975E;&#x5E38;&#x5355;&#x4E00;&#xFF0C;&#x5B83;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x96BE;&#x4EE5;&#x76F4;&#x63A5;&#x5B9E;&#x73B0;&#x7684;&#x9010;&#x5E27;&#x52A8;&#x753B;&#xFF0C;&#x4F8B;&#x5982;&#x4EAC;&#x4E1C;app&#x4E0A;&#x7684;&#x5954;&#x8DD1;&#x7684;&#x5FEB;&#x9012;&#x5458;&#x7684;&#x52A8;&#x753B;&#x3002;</p>
+<p>&#x5B98;&#x7F51;&#x4E0A;&#x7ED9;&#x4E86;&#x660E;&#x786E;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4E5F;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;demo&#xFF1A;</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">animation-list</span></span><br><span class="line">    <span class="attribute">android:oneshot</span>=<span class="value">&quot;false&quot;</span> <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">&quot;@drawable/jiang1&quot;</span> <span class="attribute">android:duration</span>=<span class="value">&quot;200&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">&quot;@drawable/jiang2&quot;</span> <span class="attribute">android:duration</span>=<span class="value">&quot;200&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">&quot;@drawable/jiang3&quot;</span> <span class="attribute">android:duration</span>=<span class="value">&quot;200&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">animation-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&#x8FD8;&#x662F;&#x4F7F;&#x7528;xml&#x7684;&#x5F62;&#x5F0F;&#x4F7F;&#x7528;&#xFF0C;Drawable Animation&#x7684;xml&#x6587;&#x4EF6;&#x662F;&#x653E;&#x5728;drawable&#x6587;&#x4EF6;&#x5939;&#x800C;&#x4E0D;&#x662F;anim&#xFF0C;&#x8FD9;&#x70B9;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>&#x52A8;&#x753B;&#x7684;&#x6548;&#x679C;&#x662F;&#x4ECE;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5F00;&#x59CB;&#xFF0C;&#x4E00;&#x76F4;&#x64AD;&#x653E;&#x5230;&#x6700;&#x540E;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x3002;&#x5982;&#x679C;onshot&#x8BBE;&#x7F6E;&#x4E3A;false&#xFF0C;&#x5219;&#x4F1A;&#x5FAA;&#x73AF;&#x4E0D;&#x505C;&#x64AD;&#x653E;&#xFF0C;&#x5982;&#x679C;&#x4E3A;true&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x6B21;&#x4E4B;&#x540E;&#x5C31;&#x4F1A;&#x505C;&#x6B62;&#x3002;</p>
+<p>&#x5728;Activity&#x91CC;&#x7684;&#x4F7F;&#x7528;&#xFF1A;</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuliangwang.learnanimation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.graphics.drawable.<span class="type">AnimationDrawable</span>;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.<span class="type">AppCompatActivity</span>;</span><br><span class="line"><span class="keyword">import</span> android.os.<span class="type">Bundle</span>;</span><br><span class="line"><span class="keyword">import</span> android.view.<span class="type">View</span>;</span><br><span class="line"><span class="keyword">import</span> android.view.animation.<span class="type">Animation</span>;</span><br><span class="line"><span class="keyword">import</span> android.view.animation.<span class="type">AnimationSet</span>;</span><br><span class="line"><span class="keyword">import</span> android.view.animation.<span class="type">AnimationUtils</span>;</span><br><span class="line"><span class="keyword">import</span> android.widget.<span class="type">Button</span>;</span><br><span class="line"><span class="keyword">import</span> android.widget.<span class="type">ImageView</span>;</span><br><span class="line"><span class="keyword">import</span> android.widget.<span class="type">TextView</span>;</span><br><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">AppCompatActivity</span> {</span></span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> void onCreate(<span class="type">Bundle</span> savedInstanceState) {</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(<span class="type">R</span>.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="type">TextView</span> textView = (<span class="type">TextView</span>) findViewById(<span class="type">R</span>.id.test_text);</span><br><span class="line">        <span class="type">ImageView</span> imageView = (<span class="type">ImageView</span>) findViewById(<span class="type">R</span>.id.test_image);</span><br><span class="line">        <span class="type">Button</span> button = (<span class="type">Button</span>) findViewById(<span class="type">R</span>.id.test_button);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="type">Animation</span> animation = <span class="type">AnimationUtils</span>.loadAnimation(getBaseContext(),<span class="type">R</span>.anim.test_anim);</span><br><span class="line">        <span class="keyword">final</span> <span class="type">AnimationDrawable</span> animationDrawable = (<span class="type">AnimationDrawable</span>) imageView.getBackground();</span><br><span class="line"></span><br><span class="line">        button.setOnClickListener(<span class="keyword">new</span> <span class="type">View</span>.<span class="type">OnClickListener</span>() {</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            public void onClick(<span class="type">View</span> v) {</span><br><span class="line">                textView.startAnimation(animation);</span><br><span class="line">                animationDrawable.start();</span><br><span class="line">            }</span><br><span class="line">        });</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>Drawable Animation&#x5230;&#x8FD9;&#x91CC;&#x7ED3;&#x675F;&#x3002;&#x6700;&#x540E;&#x662F;&#x6700;&#x590D;&#x6742;&#x7684;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x3002;</p>
+<p>&#xFF08;3&#xFF09;Property Animation</p>
+<p>&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x524D;&#x9700;&#x8981;&#x5148;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;&#x63D2;&#x503C;&#x5668;&#xFF08;Interpolator&#xFF09;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x56E0;&#x4E3A;&#x63D2;&#x503C;&#x5668;&#x662F;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x6838;&#x5FC3;&#x3002;</p>
+<p>&#x63D2;&#x503C;&#x5668;&#xFF0C;&#x7B80;&#x5355;&#x7684;&#x6765;&#x8BF4;&#x5C31;&#x8BF4;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x5B83;&#x6839;&#x636E;&#x8F93;&#x5165;&#x7684;&#x503C;&#x548C;&#x9884;&#x8BBE;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x63A7;&#x5236;&#x8F93;&#x51FA;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x8F93;&#x51FA;&#x503C;&#x6700;&#x540E;&#x4EA4;&#x7ED9;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#xFF0C;&#x4ECE;&#x800C;&#x63A7;&#x5236;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x53D8;&#x5316;&#x901F;&#x7387;&#x3002;&#x8F93;&#x5165;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x6700;&#x540E;&#x6539;&#x53D8;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x67D0;&#x4E2A;filed&#x3002;</p>
+<p>&#x63D2;&#x503C;&#x5668;&#x672C;&#x8EAB;&#x4E0D;&#x53C2;&#x4E0E;&#x5173;&#x4E8E;UI&#x7684;&#x4EFB;&#x4F55;&#x884C;&#x4E3A;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5DE5;&#x5177;&#xFF0C;&#x771F;&#x6B63;&#x53BB;&#x5B9E;&#x73B0;&#x52A8;&#x753B;&#x7684;&#x8FD8;&#x662F;Property Animation&#x3002;</p>
+<blockquote>
+<p>The property animation system is a robust framework that allows you to animate almost anything. You can define an animation to change any object property over time, regardless of whether it draws to the screen or not. A property animation changes a property&#x2019;s (a field in an object) value over a specified length of time. To animate something, you specify the object property that you want to animate, such as an object&#x2019;s position on the screen, how long you want to animate it for, and what values you want to animate between.</p>
+</blockquote>
+<p>&#x4EE5;&#x4E0A;&#x8BF4;&#x660E;&#x6765;&#x81EA;Google&#x7684;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x770B;&#x5230;&#x7684;&#x5C5E;&#x6027;&#xFF08;&#x4F4D;&#x7F6E;&#x3001;&#x957F;&#x5EA6;&#x7B49;&#xFF09;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x6765;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x8FD9;&#x4E2A;&#x884C;&#x4E3A;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x901A;&#x8FC7;&#x63D2;&#x503C;&#x5668;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x76EE;&#x6807;&#x5C31;&#x662F;&#x6765;&#x4FEE;&#x6539;&#x4F4D;&#x7F6E;&#x3001;&#x957F;&#x5EA6;&#x7B49;&#x5C5E;&#x6027;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x52A8;&#x753B;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x672C;&#x8EAB;&#x975E;&#x5E38;&#x590D;&#x6742;&#xFF0C;&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x4E5F;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x4F46;&#x662F;&#x76F8;&#x6BD4;View Animation&#x5B83;&#x80FD;&#x5B9E;&#x73B0;&#x66F4;&#x591A;&#x66F4;&#x597D;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;&#xFF0C;&#x6211;&#x4EEC;&#x8DDF;&#x7740;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E00;&#x6B65;&#x6B65;&#x8D70;&#xFF0C;&#x628A;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x4F7F;&#x7528;&#x641E;&#x6E05;&#x695A;&#x3002;</p>
+<blockquote>
+<p>The property animation system lets you define the following characteristics of an animation:</p>
+<ul>
+<li>Duration: You can specify the duration of an animation. The default length is 300 ms.</li>
+<li>Time interpolation: You can specify how the values for the property are calculated as a function of the animation&#x2019;s current elapsed time.</li>
+<li>Repeat count and behavior: You can specify whether or not to have an animation repeat when it reaches the end of a duration and how many times to repeat the animation. You can also specify whether you want the animation to play back in reverse. Setting it to reverse plays the animation forwards then backwards repeatedly, until the number of repeats is reached.</li>
+<li>Animator sets: You can group animations into logical sets that play together or sequentially or after specified delays.</li>
+<li>Frame refresh delay: You can specify how often to refresh frames of your animation. The default is set to refresh every 10 ms, but the speed in which your application can refresh frames is ultimately dependent on how busy the system is overall and how fast the system can service the underlying timer.</li>
+</ul>
+</blockquote>
+<p>&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x5141;&#x8BB8;&#x4F60;&#x5B9A;&#x4E49;&#x4E00;&#x4E0B;&#x51E0;&#x79CD;&#x52A8;&#x753B;&#x7684;&#x7279;&#x6027;&#x3002;</p>
+<ul>
+<li>Duration:&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x52A8;&#x753B;&#x7684;&#x5177;&#x4F53;&#x95F4;&#x9694;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x662F;300ms&#x3002;</li>
+<li>Time interpolation:&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5982;&#x4F55;&#x6839;&#x636E;&#x5C5E;&#x6027;&#x503C;&#x7684;&#x6765;&#x8BA1;&#x7B97;&#x5F53;&#x524D;&#x52A8;&#x753B;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x3002;</li>
+<li>Repeat count and behavior&#xFF1A;&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5F53;&#x52A8;&#x753B;&#x6309;&#x7167;duration&#x7ED3;&#x675F;&#x540E;&#x662F;&#x5426;&#x8BA9;&#x52A8;&#x753B;&#x91CD;&#x590D;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x662F;&#x5426;&#x8BA9;&#x52A8;&#x753B;&#x4ECE;&#x540E;&#x5411;&#x524D;&#x64AD;&#x653E;&#x3002;&#x8BBE;&#x7F6E;&#x5B83;&#x6765;&#x53CD;&#x5411;&#x64AD;&#x653E;&#x52A8;&#x753B;&#xFF0C;&#x5148;&#x6B63;&#x5E38;&#x64AD;&#x653E;&#x7136;&#x540E;&#x4ECE;&#x540E;&#x5411;&#x524D;&#x64AD;&#x653E;&#xFF0C;&#x91CD;&#x590D;&#x8FD9;&#x6837;&#x7684;&#x64CD;&#x4F5C;&#x76F4;&#x5230;&#x8FD0;&#x884C;&#x5230;&#x6307;&#x5B9A;&#x6B21;&#x6570;&#x3002;</li>
+<li>Animator sets&#xFF1A;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x591A;&#x4E2A;&#x52A8;&#x753B;&#x8BBE;&#x7F6E;&#x6210;&#x4E00;&#x7EC4;&#x653E;&#x7F6E;&#x5728;set&#x91CC;&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x64AD;&#x653E;&#x3001;&#x6309;&#x7167;&#x987A;&#x5E8F;&#x64AD;&#x653E;&#x3001;&#x5728;&#x6307;&#x5B9A;&#x5EF6;&#x8FDF;&#x540E;&#x64AD;&#x653E;&#x3002;</li>
+<li>Frame refresh delay&#xFF1A;&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x591A;&#x4E45;&#x5237;&#x65B0;&#x4E00;&#x6B21;&#x52A8;&#x753B;&#x5E27;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x6BCF;10ms&#x5237;&#x65B0;&#x4E00;&#x6B21;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#x5237;&#x65B0;&#x901F;&#x5EA6;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x7684;&#x7CFB;&#x7EDF;&#x6574;&#x4F53;&#x7684;&#x5FD9;&#x788C;&#x7A0B;&#x5E8F;&#x548C;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x3002;&#x8FD9;&#x4E2A;&#x610F;&#x601D;&#x5C31;&#x662F;&#x8BF4;&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5237;&#x65B0;&#x9891;&#x7387;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x5237;&#x65B0;&#x9891;&#x7387;&#x6700;&#x7EC8;&#x53D6;&#x51B3;&#x4E8E;&#x5E95;&#x5C42;&#x7684;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#xFF0C;&#x4F60;&#x7684;&#x9891;&#x7387;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;&#x53C2;&#x8003;&#x503C;&#x3002;</li>
+</ul>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x8BF4;&#x660E;&#x4E86;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x770B;&#x3002;</p>
+<p><img src="https://developer.android.com/images/animation/animation-linear.png" alt=""></p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x7F51;&#x7AD9;&#xFF1A;</p>
+<p>Android&#x5B98;&#x65B9;&#x7F51;&#x7AD9;</p>
+<p><a href="https://developer.android.com/guide/topics/graphics/view-animation.html" target="_blank" rel="external">https://developer.android.com/guide/topics/graphics/view-animation.html</a></p>
+<p>&#x535A;&#x5BA2;&#xFF1A;</p>
+<p><a href="http://blog.csdn.net/yanbober/article/details/46481171" target="_blank" rel="external">http://blog.csdn.net/yanbober/article/details/46481171</a></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/25/Android动画实现原理学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android动画实现原理学习</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Android动画总结" data-title="Android动画总结" data-url="http://yoursite.com/2016/11/25/Android动画总结/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 王祖亮
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

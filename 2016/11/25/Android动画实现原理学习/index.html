@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>常用ADB命令总结 | Hexo|王祖亮</title>
+  <title>Android动画实现原理学习 | Hexo|王祖亮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.&amp;#x8FDE;&amp;#x63A5;&amp;#x547D;&amp;#x4EE4;
-adb -d &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E00;&amp;#x8FDE;&amp;#x63A5;&amp;#x7684;&amp;#x5B9E;&amp;#x4F53;&amp;#x673A;&amp;#x4E0A;&amp;#x64CD;&amp;#x4F5C;
-adb -e &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E0">
+  <meta name="description" content="android 安卓">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用ADB命令总结">
-<meta property="og:url" content="http://yoursite.com/2016/11/23/常用ADB命令总结/index.html">
+<meta property="og:title" content="Android动画实现原理学习">
+<meta property="og:url" content="http://yoursite.com/2016/11/25/Android动画实现原理学习/index.html">
 <meta property="og:site_name" content="Hexo|王祖亮">
-<meta property="og:description" content="1.&amp;#x8FDE;&amp;#x63A5;&amp;#x547D;&amp;#x4EE4;
-adb -d &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E00;&amp;#x8FDE;&amp;#x63A5;&amp;#x7684;&amp;#x5B9E;&amp;#x4F53;&amp;#x673A;&amp;#x4E0A;&amp;#x64CD;&amp;#x4F5C;
-adb -e &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E0">
-<meta property="og:updated_time" content="2016-11-23T14:59:48.000Z">
+<meta property="og:description" content="android 安卓">
+<meta property="og:updated_time" content="2016-11-25T06:30:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用ADB命令总结">
-<meta name="twitter:description" content="1.&amp;#x8FDE;&amp;#x63A5;&amp;#x547D;&amp;#x4EE4;
-adb -d &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E00;&amp;#x8FDE;&amp;#x63A5;&amp;#x7684;&amp;#x5B9E;&amp;#x4F53;&amp;#x673A;&amp;#x4E0A;&amp;#x64CD;&amp;#x4F5C;
-adb -e &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E0">
+<meta name="twitter:title" content="Android动画实现原理学习">
+<meta name="twitter:description" content="android 安卓">
   
     <link rel="alternative" href="/atom.xml" title="Hexo|王祖亮" type="application/atom+xml">
   
@@ -164,11 +158,11 @@ adb -e &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E0">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-常用ADB命令总结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Android动画实现原理学习" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/23/常用ADB命令总结/" class="article-date">
-  	<time datetime="2016-11-23T14:49:32.000Z" itemprop="datePublished">2016-11-23</time>
+      <a href="/2016/11/25/Android动画实现原理学习/" class="article-date">
+  	<time datetime="2016-11-25T06:29:32.000Z" itemprop="datePublished">2016-11-25</time>
 </a>
     </div>
   
@@ -181,7 +175,7 @@ adb -e &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E0">
         
   
     <h1 class="article-title" itemprop="name">
-      常用ADB命令总结
+      Android动画实现原理学习
     </h1>
   
 
@@ -197,27 +191,7 @@ adb -e &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E0">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.&#x8FDE;&#x63A5;&#x547D;&#x4EE4;</p>
-<p>adb -d &#x76F4;&#x63A5;&#x5728;&#x552F;&#x4E00;&#x8FDE;&#x63A5;&#x7684;&#x5B9E;&#x4F53;&#x673A;&#x4E0A;&#x64CD;&#x4F5C;</p>
-<p>adb -e &#x76F4;&#x63A5;&#x5728;&#x552F;&#x4E00;&#x8FDE;&#x63A5;&#x7684;&#x865A;&#x62DF;&#x673A;&#x4E0A;&#x64CD;&#x4F5C;</p>
-<p>adb -s \<specific device=""> &#x5728;&#x6307;&#x5B9A;&#x8BBE;&#x5907;&#x53F7;&#x4E0A;&#x7684;&#x624B;&#x673A;&#x4E0A;&#x64CD;&#x4F5C;&#xFF08;&#x53EF;&#x4EE5;&#x662F;&#x865A;&#x62DF;&#x673A;&#x6216;&#x8005;&#x662F;&#x5B9E;&#x4F53;&#x673A;&#xFF09;</specific></p>
-<p>adb -a &#x5728;&#x6240;&#x6709;&#x673A;&#x5668;&#x4E0A;&#x64CD;&#x4F5C;</p>
-<p>adb devices &#x67E5;&#x770B;&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684;&#x6240;&#x6709;&#x8BBE;&#x5907;&#x7684;&#x8BBE;&#x5907;&#x53F7;</p>
-<p>adb connect &#x4F7F;&#x7528;TCP/IP&#x534F;&#x8BAE;&#x8FDE;&#x63A5;&#x8BBE;&#x5907;</p>
-<p>adb disconnect &#x65AD;&#x5F00;&#x8FDE;&#x63A5;</p>
-<p>2.&#x8BBE;&#x5907;&#x547D;&#x4EE4;</p>
-<p>adb push &#x590D;&#x5236;&#x6587;&#x4EF6;&#x6216;&#x662F;&#x76EE;&#x5F55;&#x5230;&#x8BBE;&#x5907;&#x4E0A;</p>
-<p>adb pull &#x4ECE;&#x76EE;&#x6807;&#x8BBE;&#x5907;&#x4E0A;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x5230;&#x672C;&#x673A;&#x4E0A;</p>
-<p>adb sync &#xFF1F;&#xFF1F;&#xFF1F;</p>
-<p>adb shell &#x6253;&#x5F00;&#x8BBE;&#x5907;&#x7684;shell</p>
-<p>adb emu &#xFF1F;&#xFF1F;</p>
-<p>adb logcat &#x67E5;&#x770B;&#x76EE;&#x6807;&#x8BBE;&#x5907;&#x7684;log</p>
-<p>adb install &#x5B89;&#x88C5;apk</p>
-<p>adb uninstall &#x5378;&#x8F7D;apk</p>
-<p>&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x65F6;&#x8FDE;&#x63A5;&#x548C;&#x8BBE;&#x5907;&#x547D;&#x4EE4;&#x8981;&#x4E00;&#x8D77;&#x4F7F;&#x7528;</p>
-<p>&#x5982;&#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;apk&#x5230;&#x76EE;&#x6807;&#x8BBE;&#x5907;&#x4E0B;</p>
-<p>adb -s &#x8BBE;&#x5907;&#x53F7; install apkName.apk</p>
-
+        
       
     </div>
     
@@ -226,18 +200,18 @@ adb -e &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E0">
     
 <nav id="article-nav">
   
-    <a href="/2016/11/25/Android动画实现原理学习/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/25/Android动画总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Android动画实现原理学习
+          Android动画总结
         
       </div>
     </a>
   
   
-    <a href="/2016/11/23/Android Hook机制学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android Hook机制学习</div>
+    <a href="/2016/11/23/常用ADB命令总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常用ADB命令总结</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -266,7 +240,7 @@ adb -e &amp;#x76F4;&amp;#x63A5;&amp;#x5728;&amp;#x552F;&amp;#x4E0">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="常用ADB命令总结" data-title="常用ADB命令总结" data-url="http://yoursite.com/2016/11/23/常用ADB命令总结/"></div>
+	<div class="ds-thread" data-thread-key="Android动画实现原理学习" data-title="Android动画实现原理学习" data-url="http://yoursite.com/2016/11/25/Android动画实现原理学习/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
