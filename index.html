@@ -159,94 +159,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-一个Xposed插件的诞生" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/27/一个Xposed插件的诞生/" class="article-date">
-  	<time datetime="2016-11-27T06:49:20.000Z" itemprop="datePublished">2016-11-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/27/一个Xposed插件的诞生/">一个Xposed插件的诞生</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x672C;&#x7BC7;&#x8BB0;&#x8F7D;&#x6211;&#x642D;&#x5EFA;Xposed&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;Xposed&#x63D2;&#x4EF6;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
-<p>1.&#x5728;&#x624B;&#x673A;&#x4E0A;&#x5B89;&#x88C5;Xposed&#x3002;</p>
-<p>&#x5B89;&#x88C5;Xposed&#x662F;&#x4E2A;&#x975E;&#x5E38;&#x9EBB;&#x70E6;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x6211;&#x7684;&#x6D4B;&#x8BD5;&#x673A;&#x662F;&#x7EA2;&#x7C73;2 miUI7&#x7A33;&#x5B9A;&#x7248;&#xFF0C;&#x6211;&#x672C;&#x6765;&#x60F3;&#x5728;&#x8FD9;&#x53F0;&#x6D4B;&#x8BD5;&#x673A;&#x4E0A;&#x5B89;&#x88C5;Xposed&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x53F0;&#x624B;&#x673A;&#x6CA1;&#x6709;root&#x4E5F;&#x6CA1;&#x6709;&#x5408;&#x9002;&#x7684;rom&#xFF0C;&#x5982;&#x679C;&#x8981;&#x88C5;&#x5728;&#x8FD9;&#x53F0;&#x624B;&#x673A;&#x4E0A;&#x53EF;&#x80FD;&#x8981;&#x6D6A;&#x8D39;&#x5927;&#x91CF;&#x7684;&#x65F6;&#x95F4;&#x53BB;&#x5237;&#x673A;&#xFF0C;&#x6700;&#x540E;&#x6211;&#x9009;&#x62E9;&#x653E;&#x5F03;&#x5728;&#x5B9E;&#x673A;&#x4E0A;&#x5B89;&#x88C5;&#xFF0C;&#x8F6C;&#x800C;&#x5728;Genymotion&#x4E0B;&#x7684;&#x865A;&#x62DF;&#x673A;&#x4E0A;&#x5B89;&#x88C5;&#x3002;</p>
-<p>&#x6211;&#x865A;&#x62DF;&#x673A;&#x914D;&#x7F6E;&#xFF1A;</p>
-<p>Google Nexus 6 - 5.0.0 API 21</p>
-<p>Genymotion&#x4E0A;&#x7684;&#x865A;&#x62DF;&#x673A;&#x81EA;&#x5E26;root&#x6388;&#x6743;&#x7BA1;&#x7406;&#xFF0C;&#x6211;&#x5728;root&#x6743;&#x9650;&#x4E0B;&#x5B89;&#x88C5;&#x3002;</p>
-<p>Xposed&#x6709;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;</p>
-<p>&#xFF08;1&#xFF09;XposedInstall&#x2014;&#x4E00;&#x4E2A;apk&#x5E94;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x662F;&#x8D1F;&#x8D23;&#x4E0E;&#x7528;&#x6237;&#x4EA4;&#x4E92;&#x548C;&#x7BA1;&#x7406;Xposed&#x63D2;&#x4EF6;&#x7684;Android&#x5E94;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x5B89;&#x88C5;&#x8D77;&#x6765;&#x662F;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#xFF0C;&#x4F7F;&#x7528;Genymotion&#x53EA;&#x9700;&#x8981;&#x628A;apk&#x62D6;&#x5165;&#x865A;&#x62DF;&#x673A;&#x7A97;&#x53E3;&#x5C31;&#x80FD;&#x81EA;&#x884C;&#x8BC6;&#x522B;&#x3002;</p>
-<p>&#xFF08;2&#xFF09;Xposed SDK&#x2014;&#x5B9E;&#x73B0;root&#x7684;&#x5E95;&#x5C42;&#x5E93;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x662F;&#x4E00;&#x4E2A;zip&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x4EE5;Recovery&#x7684;&#x65B9;&#x5F0F;&#x5237;&#x4E0A;&#x624B;&#x673A;&#xFF0C;&#x4E14;&#x5B98;&#x65B9;&#x5BF9;Recovery&#x7684;&#x5DE5;&#x5177;&#x6709;&#x660E;&#x786E;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x6E90;&#x751F;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x4F60;&#x5F97;&#x5148;&#x5237;&#x4E0A;&#x8981;&#x6C42;&#x7684;Recovery&#x5DE5;&#x5177;&#xFF0C;&#x975E;&#x5E38;&#x7684;&#x9EBB;&#x70E6;&#x3002;&#x5E78;&#x8FD0;&#x7684;&#x662F;Genymotion&#x4E0B;&#x6709;&#x5F88;&#x7B80;&#x5355;&#x7684;&#x5DE5;&#x5177;&#x5728;&#x865A;&#x62DF;&#x673A;&#x73AF;&#x5883;&#x4E0B;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5FEB;&#x901F;&#x5237;&#x673A;&#xFF0C;<a href="https://github.com/rovo89/GenyFlash" target="_blank" rel="external">GenyFlash</a>&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x50CF;&#x5B89;&#x88C5;apk&#x4E00;&#x6837;&#x5237;&#x673A;&#xFF0C;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x5C31;&#x80FD;&#x88C5;&#x4E0A;SDK&#x3002;</p>
-<p>2.&#x5728;Mac&#x4E0B;&#x914D;&#x7F6E;Xposed&#x63D2;&#x4EF6;&#x5F00;&#x53D1;&#x73AF;&#x5883;</p>
-<p>&#x6211;&#x8D77;&#x521D;&#x4EE5;&#x4E3A;&#x5F00;&#x53D1;Xposed&#x7684;&#x63D2;&#x4EF6;&#x4F1A;&#x975E;&#x5E38;&#x7684;&#x9EBB;&#x70E6;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#x6807;&#x51C6;&#x7684;Android&#x5DE5;&#x7A0B;&#xFF0C;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;Android Studio&#x8FD9;&#x6837;IDE&#x7684;&#x7F16;&#x8BD1;&#x3002;&#x540E;&#x6765;&#x8BD5;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x5176;&#x5B9E;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5F00;&#x53D1;Xposed&#x63D2;&#x4EF6;&#x5C31;&#x548C;&#x4E00;&#x822C;&#x7684;App&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x4E24;&#x6837;&#xFF0C;&#x5B83;&#x53EA;&#x8981;&#x6C42;&#x4F60;mainfest&#x548C;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#x91CC;&#x591A;&#x52A0;&#x5C11;&#x8BB8;&#x8BC6;&#x522B;&#x7684;&#x6807;&#x8BB0;&#x3002;</p>
-<p>Xposed&#x63D2;&#x4EF6;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A;Android App&#xFF0C;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x5B89;&#x88C5;&#x7684;XposedInstall&#x5C31;&#x4E13;&#x95E8;&#x7BA1;&#x7406;&#x8FD9;&#x6279;App&#xFF0C;&#x5728;&#x7F16;&#x5199;&#x63D2;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x628A;App&#x672C;&#x8EAB;&#x7684;&#x542F;&#x52A8;icon&#x8BBE;&#x7F6E;&#x4E3A;&#x4E0D;&#x663E;&#x793A;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EA;&#x80FD;&#x5728;XposedInstall&#x91CC;&#x627E;&#x5230;&#x5B83;&#x3002;</p>
-<p>Xposed&#x7684;&#x5F00;&#x53D1;&#x548C;&#x666E;&#x901A;&#x7684;App&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x6DFB;&#x52A0;Xposed&#x63D2;&#x4EF6;&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;&#x5C31;&#x884C;&#x4E86;&#x3002;</p>
-<p>&#x6211;&#x5728;Mac&#x4E0B;&#x7684;Android Studio&#x4E2D;&#x7F16;&#x5199;Xposed&#x63D2;&#x4EF6;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4F7F;&#x7528;Gradle&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p>app/build.gradle</p>
-<p><code>provided &apos;de.robv.android.xposed:api:82&apos;</code></p>
-<p>&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x597D;&#x50CF;&#x662F;&#x4F1A;&#x5F15;&#x7528;&#x672C;&#x673A;&#x4E0A;&#x5B89;&#x88C5;&#x7684;sdk&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x73B0;&#x5728;&#x4E5F;&#x641E;&#x4E0D;&#x592A;&#x6E05;&#x695A;&#xFF0C;&#x76EE;&#x524D;&#x5148;&#x8BB0;&#x4F4F;&#x5B83;&#x662F;&#x6211;&#x4EEC;&#x9879;&#x76EE;&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;&#x5C31;&#x591F;&#x4E86;&#x3002;</p>
-<p>3.Xposed Hello World</p>
-<p>&#x4E0B;&#x9762;&#x5F00;&#x59CB;&#x7B2C;&#x4E00;&#x4E2A;Xposed&#x63D2;&#x4EF6;&#x7684;&#x7F16;&#x5199;&#xFF1A;</p>
-<p>&#x4E3A;&#x4E86;&#x66F4;&#x76F4;&#x89C2;&#x7684;&#x770B;&#x5230;Xposed&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x8DF3;&#x8FC7;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x63D0;&#x4F9B;&#x7684;&#x6700;&#x7B80;&#x5355;&#x7684;simple&#xFF0C;&#x76F4;&#x63A5;&#x7F16;&#x5199;&#x7B2C;&#x4E00;&#x4E2A;Hook&#x63D2;&#x4EF6;&#x3002;</p>
-<p>&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE5;&#x7A0B;&#xFF0C;&#x5B83;&#x5C06;&#x88AB;Xposed&#x52AB;&#x6301;&#x5E76;&#x4FEE;&#x6539;&#x3002;</p>
-<p>&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x5DE5;&#x7A0B;&#x7684;&#x5185;&#x5BB9;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x53EA;&#x8D34;Acitivity&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuliangwang.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.<span class="type">AppCompatActivity</span>;</span><br><span class="line"><span class="keyword">import</span> android.os.<span class="type">Bundle</span>;</span><br><span class="line"><span class="keyword">import</span> android.view.<span class="type">View</span>;</span><br><span class="line"><span class="keyword">import</span> android.widget.<span class="type">Button</span>;</span><br><span class="line"><span class="keyword">import</span> android.widget.<span class="type">TextView</span>;</span><br><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">AppCompatActivity</span> {</span></span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> void onCreate(<span class="type">Bundle</span> savedInstanceState) {</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(<span class="type">R</span>.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="type">TextView</span> textView = (<span class="type">TextView</span>) findViewById(<span class="type">R</span>.id.test_text);</span><br><span class="line">        <span class="type">Button</span> button = (<span class="type">Button</span>) findViewById(<span class="type">R</span>.id.test_button);</span><br><span class="line"></span><br><span class="line">        button.setOnClickListener(<span class="keyword">new</span> <span class="type">View</span>.<span class="type">OnClickListener</span>() {</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            public void onClick(<span class="type">View</span> v) {</span><br><span class="line">                textView.setText(<span class="string">&quot;GG&quot;</span>);</span><br><span class="line">            }</span><br><span class="line">        });</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>&#x4E00;&#x4E2A;TextView&#x548C;&#x4E00;&#x4E2A;Button&#xFF0C;&#x5F53;&#x70B9;&#x51FB;Button&#xFF0C;TextView&#x7684;&#x5185;&#x5BB9;&#x5C06;&#x88AB;&#x4FEE;&#x6539;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x52AB;&#x6301;&#x8FD9;&#x4E2A;TextView&#x7684;setText&#x65B9;&#x6CD5;&#xFF0C;&#x4FEE;&#x6539;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x6700;&#x540E;&#x7684;text&#x5C06;&#x4E0D;&#x662F;&#x201C;GG&#x201D;</p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Xposed&#x63D2;&#x4EF6;&#x5DE5;&#x7A0B;&#x3002;</p>
-<p>&#x9996;&#x5148;&#x4FEE;&#x6539;AndroidMainfest&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">manifest</span> <span class="attribute">package</span>=<span class="value">&quot;com.zuliangwang.firstxposed&quot;</span></span><br><span class="line">          <span class="attribute">xmlns:android</span>=<span class="value">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">application</span></span><br><span class="line">        <span class="attribute">android:allowBackup</span>=<span class="value">&quot;true&quot;</span></span><br><span class="line">        <span class="attribute">android:icon</span>=<span class="value">&quot;@mipmap/ic_launcher&quot;</span></span><br><span class="line">        <span class="attribute">android:label</span>=<span class="value">&quot;@string/app_name&quot;</span></span><br><span class="line">        <span class="attribute">android:supportsRtl</span>=<span class="value">&quot;true&quot;</span></span><br><span class="line">        <span class="attribute">android:theme</span>=<span class="value">&quot;@style/AppTheme&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- &#x662F;&#x5426;&#x662F;xposed&#x6A21;&#x5757;&#xFF0C;xposed&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x6A21;&#x5757; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">meta-data</span></span><br><span class="line">            <span class="attribute">android:name</span>=<span class="value">&quot;xposedmodule&quot;</span></span><br><span class="line">            <span class="attribute">android:value</span>=<span class="value">&quot;true&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- &#x6A21;&#x5757;&#x63CF;&#x8FF0;&#xFF0C;&#x663E;&#x793A;&#x5728;xposed&#x6A21;&#x5757;&#x5217;&#x8868;&#x90A3;&#x91CC;&#x7B2C;&#x4E8C;&#x884C; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">meta-data</span></span><br><span class="line">            <span class="attribute">android:name</span>=<span class="value">&quot;xposeddescription&quot;</span></span><br><span class="line">            <span class="attribute">android:value</span>=<span class="value">&quot;&#x6D4B;&#x8BD5;Xposed&#x6A21;&#x5757;&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- &#x6700;&#x4F4E;xposed&#x7248;&#x672C;&#x53F7;(lib&#x6587;&#x4EF6;&#x540D;&#x53EF;&#x77E5;) --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">meta-data</span></span><br><span class="line">            <span class="attribute">android:name</span>=<span class="value">&quot;xposedminversion&quot;</span></span><br><span class="line">            <span class="attribute">android:value</span>=<span class="value">&quot;30&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">&quot;.MainActivity&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">intent-filter</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">&quot;android.intent.action.MAIN&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">&quot;android.intent.category.LAUNCHER&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">activity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>&#x8FD9;&#x4E2A;&#x73A9;&#x610F;&#x662F;&#x7ED9;XposedInstall&#x63D0;&#x4F9B;&#x7684;&#x672C;&#x63D2;&#x4EF6;&#x7684;&#x63CF;&#x8FF0;&#x3002;</p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x5728;main&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x521B;&#x5EFA;assets&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5728;&#x91CC;&#x9762;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;xposed_init&#xFF0C;&#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#x662F;&#x6709;&#x8981;&#x6C42;&#x7684;&#x3002;</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com<span class="class">.zuliangwang</span><span class="class">.firstxposed</span><span class="class">.DIAO</span></span><br></pre></td></tr></table></figure>
-<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x53EA;&#x6709;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5B83;&#x544A;&#x8BC9;xposed&#x6211;&#x4EEC;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x5165;&#x53E3;&#x3002;</p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x5728;&#x8FD9;&#x4E2A;&#x7C7B;&#x91CC;&#x7F16;&#x5199;&#x5177;&#x4F53;&#x7684;&#x903B;&#x8F91;&#xFF1A;</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zuliangwang.firstxposed;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.widget.TextView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.IXposedHookLoadPackage;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.XC_MethodHook;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.XposedBridge;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.XposedHelpers;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.callbacks.XC_LoadPackage;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by zuliangwang on 16/11/27.</span><br><span class="line"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DIAO</span> <span class="keyword">implements</span> <span class="title">IXposedHookLoadPackage</span> </span>{</span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleLoadPackage</span><span class="params">(XC_LoadPackage.LoadPackageParam loadPackageParam)</span> <span class="keyword">throws</span> Throwable </span>{</span><br><span class="line">        XposedBridge.log(<span class="string">&quot;begin&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (loadPackageParam.packageName.equals(<span class="string">&quot;com.zuliangwang.test&quot;</span>)){</span><br><span class="line">            XposedBridge.log(<span class="string">&quot;hint&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            XposedHelpers.findAndHookMethod(TextView.class, <span class="string">&quot;setText&quot;</span>, CharSequence.class,</span><br><span class="line">                    <span class="keyword">new</span> XC_MethodHook() {</span><br><span class="line">                        <span class="annotation">@Override</span></span><br><span class="line">                        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>{</span><br><span class="line">                            XposedBridge.log(<span class="string">&quot;before&quot;</span>);</span><br><span class="line">                            param.args[<span class="number">0</span>] = <span class="string">&quot;&#x4FEE;&#x6539;&#x4E86;&quot;</span>;</span><br><span class="line">                        }</span><br><span class="line"></span><br><span class="line">                        <span class="annotation">@Override</span></span><br><span class="line">                        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">afterHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>{</span><br><span class="line">                            XposedBridge.log(<span class="string">&quot;after&quot;</span>);</span><br><span class="line">                        }</span><br><span class="line">                    });</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>&#x901A;&#x8FC7;Xposed&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x53E6;&#x4E00;&#x4E2A;Android App&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x73B0;&#x5728;&#x7F16;&#x8BD1;&#x8FD9;&#x4E2A;&#x5DE5;&#x7A0B;&#xFF0C;&#x4F60;&#x4F1A;&#x5728;XposedInstall&#x91CC;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x63D2;&#x4EF6;&#x3002;&#x70B9;&#x51FB;&#x8FD0;&#x884C;&#x7B2C;&#x4E00;&#x4E2A;Test&#x5DE5;&#x7A0B;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p><img src="/2016/11/27/&#x4E00;&#x4E2A;Xposed&#x63D2;&#x4EF6;&#x7684;&#x8BDE;&#x751F;/result.png" alt="result"></p>
-<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8FD9;&#x4E2A;App&#x7684;&#x903B;&#x8F91;&#x88AB;&#x6211;&#x4EEC;&#x5199;&#x7684;&#x63D2;&#x4EF6;&#x7ED9;&#x52AB;&#x6301;&#x4E86;&#xFF01;</p>
-<p>&#x7B2C;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#x5230;&#x6B64;&#x5B8C;&#x6210;&#x3002;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-Android动画总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -995,6 +907,57 @@ glClear(GL_COLOR_BUFFER_BIT);</code><br>&#x6E05;&#x7A7A;&#x5C4F;&#x5E55;&#xFF0C;
 <pre><code>// bind the VAO <span class="list">(<span class="keyword">the</span> triangle)</span>
 glBindVertexArray<span class="list">(<span class="keyword">gVAO</span>)</span><span class="comment">;</span>
 </code></pre><p>``<br>&#x901A;&#x77E5;OpenGL&#x4F7F;&#x7528;VAO&#x548C;shader&#x3002;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-为什么实际电路总用与非门和或非门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/14/为什么实际电路总用与非门和或非门/" class="article-date">
+  	<time datetime="2016-11-14T05:23:12.000Z" itemprop="datePublished">2016-11-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/14/为什么实际电路总用与非门和或非门/">为什么实际电路总用与非门和或非门</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x505A;&#x7EC4;&#x539F;&#x5B9E;&#x9A8C;&#x65F6;&#x53D1;&#x73B0;Alu&#x7684;&#x5B9E;&#x73B0;&#x7535;&#x8DEF;&#x603B;&#x662F;&#x8981;&#x4ECE;&#x4E0E;&#x95E8;&#x3001;&#x6216;&#x95E8;&#x8FD9;&#x6837;&#x7684;&#x7B80;&#x5355;&#x7535;&#x8DEF;&#x63A8;&#x5BFC;&#x6210;&#x4E0E;&#x975E;&#x95E8;&#x548C;&#x6216;&#x975E;&#x95E8;&#x5B9E;&#x73B0;&#x3002;<br>&#x6709;&#x70B9;&#x56F0;&#x60D1;&#xFF0C;&#x540E;&#x6765;&#x627E;&#x5230;&#x4E86;&#x7B54;&#x6848;&#x3002;<br>&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#x539F;&#x56E0;&#xFF1A;<br>&#xFF08;1&#xFF09;&#x8003;&#x8651;&#x7535;&#x5B50;&#x5143;&#x4EF6;&#x7684;&#x6210;&#x672C;&#xFF0C;&#x4E5F;&#x8BB8;&#x4ECE;&#x903B;&#x8F91;&#x4E0A;&#x6765;&#x770B;&#x4E0E;&#x975E;&#x95E8;&#x548C;&#x6216;&#x975E;&#x95E8;&#x6BD4;&#x4E0E;&#x95E8;&#x548C;&#x975E;&#x95E8;&#x66F4;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#x7531;&#x4E8E;Mos&#x7BA1;&#x7684;&#x7269;&#x7406;&#x7ED3;&#x6784;&#xFF0C;&#x5B9E;&#x73B0;&#x4E0E;&#x975E;&#x95E8;&#x548C;&#x6216;&#x975E;&#x95E8;&#x9700;&#x8981;&#x7684;&#x5143;&#x4EF6;&#x5176;&#x5B9E;&#x66F4;&#x5C11;&#xFF0C;&#x6210;&#x672C;&#x66F4;&#x4F4E;&#xFF0C;&#x800C;&#x7B80;&#x5355;&#x7684;&#x4E0E;&#x95E8;&#x548C;&#x6216;&#x95E8;&#x5176;&#x5B9E;&#x5728;&#x7ED3;&#x6784;&#x4E0A;&#x6BD4;&#x524D;&#x8005;&#x66F4;&#x590D;&#x6742;&#x3002;<br>&#xFF08;2&#xFF09;&#x6216;&#x975E;&#x95E8;&#x548C;&#x4E0E;&#x975E;&#x95E8;&#x5177;&#x6709;&#x903B;&#x8F91;&#x5B8C;&#x5907;&#x6027;&#xFF0C;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x95E8;&#x901A;&#x8FC7;&#x7EC4;&#x5408;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4EFB;&#x610F;&#x7535;&#x8DEF;&#xFF0C;&#x800C;&#x4E0E;&#x95E8;&#x548C;&#x6216;&#x95E8;&#x4E0D;&#x5177;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x80FD;&#x529B;&#x3002;<br>&#xFF08;3&#xFF09;&#x4ECD;&#x7136;&#x548C;&#x7535;&#x5B50;&#x5143;&#x4EF6;&#x7684;&#x7269;&#x7406;&#x7ED3;&#x6784;&#x6709;&#x5173;&#xFF0C;&#x4E0E;&#x975E;&#x95E8;&#x548C;&#x6216;&#x975E;&#x95E8;&#x5B9E;&#x9645;&#x8FD0;&#x884C;&#x6548;&#x7387;&#x6BD4;&#x4E0E;&#x95E8;&#x548C;&#x6216;&#x95E8;&#x66F4;&#x9AD8;&#x3002;</p>
 
       
     </div>
