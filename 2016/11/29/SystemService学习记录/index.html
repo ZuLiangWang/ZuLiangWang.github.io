@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SystemService学习记录 | Hexo|王祖亮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.What&amp;#xFF1F;
+SystemService&amp;#x662F;&amp;#x4EC0;&amp;#x4E48;&amp;#x5462;&amp;#xFF1F;
+&amp;#x8981;&amp;#x7406;&amp;#x89E3;SystemService&amp;#xFF0C;&amp;#x9996;&amp;#x5148;&amp;#x8981;&amp;#x7406;&amp;#x89E3;Android&amp;#x7CFB;&amp;#x7EDF;&amp;#x7684;&amp;#x57FA;&amp;#x672C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SystemService学习记录">
+<meta property="og:url" content="http://yoursite.com/2016/11/29/SystemService学习记录/index.html">
+<meta property="og:site_name" content="Hexo|王祖亮">
+<meta property="og:description" content="1.What&amp;#xFF1F;
+SystemService&amp;#x662F;&amp;#x4EC0;&amp;#x4E48;&amp;#x5462;&amp;#xFF1F;
+&amp;#x8981;&amp;#x7406;&amp;#x89E3;SystemService&amp;#xFF0C;&amp;#x9996;&amp;#x5148;&amp;#x8981;&amp;#x7406;&amp;#x89E3;Android&amp;#x7CFB;&amp;#x7EDF;&amp;#x7684;&amp;#x57FA;&amp;#x672C">
+<meta property="og:image" content="http://yoursite.com/2016/11/29/SystemService学习记录/os1.JPG">
+<meta property="og:image" content="http://yoursite.com/2016/11/29/SystemService学习记录/os2.JPG">
+<meta property="og:updated_time" content="2016-11-29T12:30:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SystemService学习记录">
+<meta name="twitter:description" content="1.What&amp;#xFF1F;
+SystemService&amp;#x662F;&amp;#x4EC0;&amp;#x4E48;&amp;#x5462;&amp;#xFF1F;
+&amp;#x8981;&amp;#x7406;&amp;#x89E3;SystemService&amp;#xFF0C;&amp;#x9996;&amp;#x5148;&amp;#x8981;&amp;#x7406;&amp;#x89E3;Android&amp;#x7CFB;&amp;#x7EDF;&amp;#x7684;&amp;#x57FA;&amp;#x672C">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo|王祖亮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/32.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/touxiang.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">王祖亮</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一只码畜</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZuLiangWang" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">Hust Cser / Android Coder      zuliangwang@hustunique.com  329851721@qq.com</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">王祖亮</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/touxiang.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">王祖亮</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一只码畜</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZuLiangWang" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-SystemService学习记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/29/SystemService学习记录/" class="article-date">
+  	<time datetime="2016-11-29T11:58:20.000Z" itemprop="datePublished">2016-11-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SystemService学习记录
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.What&#xFF1F;</p>
+<p>SystemService&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
+<p>&#x8981;&#x7406;&#x89E3;SystemService&#xFF0C;&#x9996;&#x5148;&#x8981;&#x7406;&#x89E3;Android&#x7CFB;&#x7EDF;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x3002;</p>
+<p>&#x5927;&#x5BB6;&#x7ECF;&#x5E38;&#x770B;&#x5230;Android&#x7CFB;&#x7EDF;&#x662F;<em>C/S</em>&#x67B6;&#x6784;&#x8FD9;&#x6837;&#x7684;&#x8868;&#x8FF0;&#xFF0C;&#x4F46;&#x662F;&#x53C8;&#x6709;&#x591A;&#x5C11;&#x4EBA;&#x771F;&#x6B63;&#x7406;&#x89E3;&#x8FD9;&#x53E5;&#x8BDD;&#x5462;&#xFF1F;&#x6240;&#x8C13;&#x7684;&#x67B6;&#x6784;&#x662F;&#x6307;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x9996;&#x5148;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E24;&#x5F20;&#x56FE;&#xFF1A;</p>
+<p><img src="/2016/11/29/SystemService&#x5B66;&#x4E60;&#x8BB0;&#x5F55;/os1.JPG" alt=""></p>
+<p><img src="/2016/11/29/SystemService&#x5B66;&#x4E60;&#x8BB0;&#x5F55;/os2.JPG" alt=""></p>
+<p>&#x8FD9;&#x4E24;&#x5F20;&#x56FE;&#x662F;&#x6211;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8BFE;&#x672C;&#x4E0A;&#x7684;&#x539F;&#x8BDD;&#x3002;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x7EC4;&#x7EC7;&#x8FD0;&#x884C;&#x65F6;&#x7ED3;&#x6784;&#x5462;&#xFF1F;&#x5927;&#x5BB6;&#x4E5F;&#x8BB8;&#x90FD;&#x77E5;&#x9053;C&#x8BED;&#x8A00;&#x91CC;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#xFF0C;&#x91C7;&#x7528;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x662F;&#x628A;&#x6574;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x89C6;&#x4E3A;&#x4E00;&#x79CD;&#x670D;&#x52A1;&#xFF0C;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;&#x800C;Android&#x662F;&#x91C7;&#x7528;&#x7684;&#x5219;&#x662F;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;C/S&#x67B6;&#x6784;&#x7684;&#x5F62;&#x5F0F;&#x628A;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x96C6;&#x5408;&#x5305;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x91CC;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x5C31;&#x53EB;&#x505A;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x8FDB;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4E0E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x800C;&#x662F;&#x4EE5;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x8FDB;&#x7A0B;&#x4E3A;&#x4E2D;&#x4ECB;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x6765;&#x8C03;&#x7528;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x4F60;&#x5E94;&#x8BE5;&#x660E;&#x767D;SystemService&#x662F;&#x4EC0;&#x4E48;&#x4E86;&#x5427;&#xFF1F;&#x8FD9;&#x4E5F;&#x662F;&#x79D1;&#x73ED;&#x51FA;&#x8EAB;&#x7684;&#x4F18;&#x52BF;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x65B9;&#x9762;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x5B66;&#x8D77;SystemService&#x8FD9;&#x6837;&#x7684;&#x5E95;&#x5C42;&#x5185;&#x5BB9;&#x5C31;&#x662F;&#x76F2;&#x4EBA;&#x6478;&#x8C61;&#xFF01;&#x6211;&#x770B;&#x4E86;&#x7F51;&#x4E0A;&#x4E0D;&#x5C11;&#x7684;&#x535A;&#x5BA2;&#xFF0C;&#x4F46;&#x662F;&#x57FA;&#x672C;&#x6CA1;&#x6709;&#x4EBA;&#x4ECE;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FD9;&#x4E2A;&#x89D2;&#x5EA6;&#x6765;&#x5206;&#x6790;SystemService&#xFF0C;&#x52A8;&#x4E0D;&#x52A8;&#x5C31;&#x662F;&#x8DD1;&#x5230;SystemService&#x5185;&#x90E8;&#x7684;&#x5404;&#x4E2A;&#x670D;&#x52A1;&#xFF0C;&#x4E00;&#x4E0B;&#x5B50;&#x8BA9;&#x4EBA;&#x4E00;&#x5934;&#x96FE;&#x6C34;&#xFF0C;&#x5B66;&#x5B8C;&#x4E86;&#x4E5F;&#x662F;&#x4E0D;&#x77E5;&#x6240;&#x8C13;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x6765;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>SystemService&#x662F;Android&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x6838;&#x5FC3;&#x670D;&#x52A1;&#x6240;&#x5728;&#x7684;<em>&#x8FDB;&#x7A0B;</em>&#xFF0C;&#x6BD4;&#x5982;&#x8D1F;&#x8D23;&#x542F;&#x52A8;Activity&#x7684;ActivityManagerService&#xFF0C;&#x8D1F;&#x8D23;&#x7535;&#x6E90;&#x7BA1;&#x7406;&#x7684;PowerManagerService&#x548C;&#x8D1F;&#x8D23;&#x521B;&#x5EFA;Window&#x7684;WindowManagerService&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x91CC;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x670D;&#x52A1;&#x5360;&#x636E;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;SystemService&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x6765;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;Android&#x7684;&#x6838;&#x5FC3;&#x670D;&#x52A1;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x5C5E;&#x4E8E;Java&#x5C42;&#xFF0C;&#x7531;Zygote&#x8FDB;&#x7A0B;&#x5B75;&#x5316;&#x800C;&#x6765;&#xFF0C;&#x5B83;&#x662F;Android Runtime&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x5728;&#x6211;&#x4EEC;&#x5199;App&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8C03;&#x7528;xxServiceManager&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x5728;&#x4E0E;&#x5B83;&#x4EA4;&#x4E92;&#x3002;</p>
+</blockquote>
+<p>2.How&#xFF1F;</p>
+<p>&#x641E;&#x660E;&#x767D;&#x4E86;SystemService&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F;&#x600E;&#x4E48;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;SystemService&#x3002;</p>
+<p>&#x4F7F;&#x7528;SystemService&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x5B83;&#x5305;&#x542B;&#x7684;&#x5404;&#x4E2A;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x6709;&#x54EA;&#x4E9B;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x3002;</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/27/第一个Xposed插件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第一个Xposed插件</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="SystemService学习记录" data-title="SystemService学习记录" data-url="http://yoursite.com/2016/11/29/SystemService学习记录/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 王祖亮
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
