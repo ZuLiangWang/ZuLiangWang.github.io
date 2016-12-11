@@ -689,6 +689,68 @@
 
 
   
+    <article id="post-View、Window、Activity的关系" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/23/View、Window、Activity的关系/" class="article-date">
+  	<time datetime="2016-11-23T14:49:32.000Z" itemprop="datePublished">2016-11-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/23/View、Window、Activity的关系/">View、Window、Activity的关系</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x4E00;&#x4E2A;Android&#x5E94;&#x7528;&#x7684;&#x89C6;&#x56FE;&#x662F;&#x5982;&#x4F55;&#x5448;&#x73B0;&#x51FA;&#x6765;&#x5462;&#xFF1F;</p>
+<p>&#x65B0;&#x624B;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x63A5;&#x89E6;&#x8FC7;Window&#x800C;&#x8BA4;&#x4E3A;&#x662F;Activity&#x6216;&#x8005;&#x662F;View&#xFF0C;&#x6211;&#x5728;&#x521A;&#x5F00;&#x59CB;&#x5B66;&#x4E60;Android &#x7684;&#x65F6;&#x5019;&#x5C31;&#x8BA4;&#x4E3A;&#x4E00;&#x4E2A;Activity&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x753B;&#x677F;&#x4E00;&#x6837;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x89C6;&#x56FE;&#x7684;&#x771F;&#x6B63;&#x4EE3;&#x8868;&#x7C7B;&#x662F;Window&#x3002;&#x6240;&#x8C13;&#x7684;&#x89C6;&#x56FE;&#x4EE3;&#x8868;&#x7C7B;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F;&#x6307;&#x771F;&#x6B63;&#x7684;&#x7ED8;&#x5236;&#x5DE5;&#x4F5C;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;Activity&#x672C;&#x8EAB;&#x4E0D;&#x8D1F;&#x8D23;&#x7ED8;&#x5236;UI&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x4E2D;&#x8F6C;&#x63A7;&#x5236;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x628A;View&#x4EA4;&#x7ED9;&#x4ED6;&#xFF0C;&#x4ED6;&#x8D1F;&#x8D23;&#x8BA9;Window&#x53BB;&#x7ED8;&#x5236;&#x6211;&#x4EEC;&#x7ED9;&#x5B83;&#x7684;View&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;Android&#x5448;&#x73B0;&#x51FA;&#x89C6;&#x56FE;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;Activity&#x6CA1;&#x6709;Window&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x548C;Service&#x7C7B;&#x4F3C;&#x4E86;&#x3002;</p>
+<p>&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x601D;&#x8DEF;&#x6765;&#x60F3;&#xFF0C;&#x5F88;&#x663E;&#x7136;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;Acitivity&#x5FC5;&#x7136;&#x6301;&#x6709;&#x4E00;&#x4E2A;Window&#x7684;&#x5F15;&#x7528;&#x4EE5;&#x53CA;&#x4E00;&#x5957;View&#x7684;&#x63A7;&#x5236;&#x673A;&#x5236;&#x3002;</p>
+<p>Window&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x548C;&#x5185;&#x5BB9;&#x6211;&#x4EEC;&#x4E0D;&#x8C08;&#xFF0C;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x6D89;&#x53CA;&#x5230;&#x5E95;&#x5C42;&#x7684;&#x771F;&#x6B63;&#x7684;&#x7ED8;&#x56FE;&#x7684;OpenGL&#x8FD9;&#x6837;&#x7684;&#x73A9;&#x610F;&#xFF0C;&#x5B83;&#x5FC5;&#x7136;&#x662F;&#x7531;C++&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x7684;&#x91CD;&#x70B9;&#x5C31;&#x662F;View&#x7684;&#x8FD9;&#x5957;&#x63A7;&#x5236;&#x673A;&#x5236;&#xFF0C;Activity&#x662F;&#x5982;&#x4F55;&#x63A7;&#x5236;&#x6211;&#x4EEC;&#x4EA4;&#x7ED9;&#x5B83;&#x7684;View&#x7684;&#xFF1F;&#x5F88;&#x591A;&#x4E66;&#x91CC;&#x90FD;&#x90FD;&#x4F1A;&#x8C08;&#x5230;ViewRoot&#x548C;DecorView&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x660E;&#x786E;&#x521A;&#x624D;&#x8BF4;&#x7684;&#x524D;&#x63D0;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BF4;&#x4E86;&#x534A;&#x5929;&#x4E5F;&#x4E0D;&#x77E5;&#x9053;&#x662F;&#x5728;&#x5E72;&#x4EC0;&#x4E48;&#x3002;</p>
+<p>&#x5148;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x4E00;&#x4E0B;Window&#x548C;Activity&#xFF1A;</p>
+<p>(1)&#x6BCF;&#x4E00;&#x4E2A;Activity&#x5B9E;&#x4F8B;&#x91CC;&#x90FD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;Window&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;Activity&#x88AB;ActivityThread&#x521B;&#x5EFA;&#x65F6;&#x8C03;&#x7528;Activity&#x7684;attch&#x65B9;&#x6CD5;&#x5C06;Window&#x5B9E;&#x4F8B;&#x4E0E;Activity&#x5B9E;&#x4F8B;&#x7ED1;&#x5B9A;&#x3002;</p>
+<p>(2)Acitivity&#x8C03;&#x7528;setContentView&#x65B9;&#x6CD5;&#x5B9E;&#x9645;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x662F;Window&#x7684;setContentView&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5F00;&#x59CB;View&#xFF1A;</p>
+<p>&#x5148;&#x641E;&#x6E05;&#x695A;ViewRoot&#x548C;DecorView&#x4E24;&#x8005;&#x3002;</p>
+<p>ViewRoot&#x51C6;&#x786E;&#x7684;&#x8BF4;&#x8FD9;&#x4E2A;&#x7C7B;&#x662F;ViewRootImpl&#xFF0C;&#x5B83;&#x662F;WindowManagerService&#x548C;DecorView&#x7684;&#x8FDE;&#x63A5;&#x8005;&#xFF0C;&#x4ECE;&#x8FD9;&#x4E2A;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;ViewRoot&#x7684;&#x66F4;&#x4E0A;&#x4E00;&#x5C42;&#xFF0C;&#x4F46;&#x662F;ViewRoot&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x7EE7;&#x627F;View&#xFF0C;&#x5B83;&#x4E0D;&#x5728;View&#x6811;&#x8FD9;&#x4E2A;&#x5C42;&#x6B21;&#x91CC;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;ViewRoot&#x7406;&#x89E3;&#x4E3A;Activity&#x7BA1;&#x7406;View&#x6811;&#x7684;&#x4E2D;&#x4ECB;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x3001;&#x5237;&#x65B0;&#x4E8B;&#x4EF6;&#x90FD;&#x662F;&#x901A;&#x8FC7;ViewRoot&#x4F20;&#x9012;&#x7ED9;View&#x6811;&#x3002;</p>
+<p>&#x800C;DecorView&#x5C31;&#x662F;View&#x6811;&#x7684;&#x9876;&#x5C42;&#x4E86;&#xFF0C;&#x5B83;&#x7EE7;&#x627F;&#x81EA;FrameLayout&#xFF0C;&#x4E00;&#x4E2A;Acitivity&#x91CC;&#x7684;&#x6240;&#x6709;View&#x90FD;&#x5728;&#x8FD9;&#x4E2A;Decor&#x7684;&#x4E0B;&#x9762;&#xFF0C;DecorView&#x901A;&#x5E38;&#x5305;&#x542B;&#x4E00;&#x4E2A;LinearLayout&#xFF0C;&#x5B83;&#x7684;&#x5B50;view&#x662F;&#x4E0A;&#x4E0B;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF08;&#x6839;&#x636E;&#x7248;&#x672C;&#x4E0D;&#x540C;&#x6709;&#x533A;&#x522B;&#xFF09;&#x3002;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-常用ADB命令总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -738,68 +800,6 @@
 <p>&#x53E6;&#x8865;&#x5145;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5B9E;&#x7528;&#x7684;&#x547D;&#x4EE4;&#xFF1A;</p>
 <p>&#x6709;&#x65F6;&#x5019;&#x5728;Android Studio&#x4E0A;&#x4F1A;&#x78B0;&#x5230;&#x627E;&#x4E0D;&#x5230;&#x8BBE;&#x5907;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x901A;&#x5E38;&#x901A;&#x8FC7;&#x91CD;&#x65B0;&#x542F;&#x52A8;ADB&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x91CD;&#x542F;&#x7684;&#x547D;&#x4EE4;&#x662F;</p>
 <p><code>adb kill-server</code>&#x548C;<code>adb start-server</code></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-View、Window、Activity的关系" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/23/View、Window、Activity的关系/" class="article-date">
-  	<time datetime="2016-11-23T14:49:32.000Z" itemprop="datePublished">2016-11-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/23/View、Window、Activity的关系/">View、Window、Activity的关系</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x4E00;&#x4E2A;Android&#x5E94;&#x7528;&#x7684;&#x89C6;&#x56FE;&#x662F;&#x5982;&#x4F55;&#x5448;&#x73B0;&#x51FA;&#x6765;&#x5462;&#xFF1F;</p>
-<p>&#x65B0;&#x624B;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x63A5;&#x89E6;&#x8FC7;Window&#x800C;&#x8BA4;&#x4E3A;&#x662F;Activity&#x6216;&#x8005;&#x662F;View&#xFF0C;&#x6211;&#x5728;&#x521A;&#x5F00;&#x59CB;&#x5B66;&#x4E60;Android &#x7684;&#x65F6;&#x5019;&#x5C31;&#x8BA4;&#x4E3A;&#x4E00;&#x4E2A;Activity&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x753B;&#x677F;&#x4E00;&#x6837;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x89C6;&#x56FE;&#x7684;&#x771F;&#x6B63;&#x4EE3;&#x8868;&#x7C7B;&#x662F;Window&#x3002;&#x6240;&#x8C13;&#x7684;&#x89C6;&#x56FE;&#x4EE3;&#x8868;&#x7C7B;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F;&#x6307;&#x771F;&#x6B63;&#x7684;&#x7ED8;&#x5236;&#x5DE5;&#x4F5C;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;Activity&#x672C;&#x8EAB;&#x4E0D;&#x8D1F;&#x8D23;&#x7ED8;&#x5236;UI&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x4E2D;&#x8F6C;&#x63A7;&#x5236;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x628A;View&#x4EA4;&#x7ED9;&#x4ED6;&#xFF0C;&#x4ED6;&#x8D1F;&#x8D23;&#x8BA9;Window&#x53BB;&#x7ED8;&#x5236;&#x6211;&#x4EEC;&#x7ED9;&#x5B83;&#x7684;View&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;Android&#x5448;&#x73B0;&#x51FA;&#x89C6;&#x56FE;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;Activity&#x6CA1;&#x6709;Window&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x548C;Service&#x7C7B;&#x4F3C;&#x4E86;&#x3002;</p>
-<p>&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x601D;&#x8DEF;&#x6765;&#x60F3;&#xFF0C;&#x5F88;&#x663E;&#x7136;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;Acitivity&#x5FC5;&#x7136;&#x6301;&#x6709;&#x4E00;&#x4E2A;Window&#x7684;&#x5F15;&#x7528;&#x4EE5;&#x53CA;&#x4E00;&#x5957;View&#x7684;&#x63A7;&#x5236;&#x673A;&#x5236;&#x3002;</p>
-<p>Window&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x548C;&#x5185;&#x5BB9;&#x6211;&#x4EEC;&#x4E0D;&#x8C08;&#xFF0C;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x6D89;&#x53CA;&#x5230;&#x5E95;&#x5C42;&#x7684;&#x771F;&#x6B63;&#x7684;&#x7ED8;&#x56FE;&#x7684;OpenGL&#x8FD9;&#x6837;&#x7684;&#x73A9;&#x610F;&#xFF0C;&#x5B83;&#x5FC5;&#x7136;&#x662F;&#x7531;C++&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
-<p>&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x7684;&#x91CD;&#x70B9;&#x5C31;&#x662F;View&#x7684;&#x8FD9;&#x5957;&#x63A7;&#x5236;&#x673A;&#x5236;&#xFF0C;Activity&#x662F;&#x5982;&#x4F55;&#x63A7;&#x5236;&#x6211;&#x4EEC;&#x4EA4;&#x7ED9;&#x5B83;&#x7684;View&#x7684;&#xFF1F;&#x5F88;&#x591A;&#x4E66;&#x91CC;&#x90FD;&#x90FD;&#x4F1A;&#x8C08;&#x5230;ViewRoot&#x548C;DecorView&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x660E;&#x786E;&#x521A;&#x624D;&#x8BF4;&#x7684;&#x524D;&#x63D0;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BF4;&#x4E86;&#x534A;&#x5929;&#x4E5F;&#x4E0D;&#x77E5;&#x9053;&#x662F;&#x5728;&#x5E72;&#x4EC0;&#x4E48;&#x3002;</p>
-<p>&#x5148;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x4E00;&#x4E0B;Window&#x548C;Activity&#xFF1A;</p>
-<p>(1)&#x6BCF;&#x4E00;&#x4E2A;Activity&#x5B9E;&#x4F8B;&#x91CC;&#x90FD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;Window&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;Activity&#x88AB;ActivityThread&#x521B;&#x5EFA;&#x65F6;&#x8C03;&#x7528;Activity&#x7684;attch&#x65B9;&#x6CD5;&#x5C06;Window&#x5B9E;&#x4F8B;&#x4E0E;Activity&#x5B9E;&#x4F8B;&#x7ED1;&#x5B9A;&#x3002;</p>
-<p>(2)Acitivity&#x8C03;&#x7528;setContentView&#x65B9;&#x6CD5;&#x5B9E;&#x9645;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x662F;Window&#x7684;setContentView&#x65B9;&#x6CD5;&#x3002;</p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x5F00;&#x59CB;View&#xFF1A;</p>
-<p>&#x5148;&#x641E;&#x6E05;&#x695A;ViewRoot&#x548C;DecorView&#x4E24;&#x8005;&#x3002;</p>
-<p>ViewRoot&#x51C6;&#x786E;&#x7684;&#x8BF4;&#x8FD9;&#x4E2A;&#x7C7B;&#x662F;ViewRootImpl&#xFF0C;&#x5B83;&#x662F;WindowManagerService&#x548C;DecorView&#x7684;&#x8FDE;&#x63A5;&#x8005;&#xFF0C;&#x4ECE;&#x8FD9;&#x4E2A;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;ViewRoot&#x7684;&#x66F4;&#x4E0A;&#x4E00;&#x5C42;&#xFF0C;&#x4F46;&#x662F;ViewRoot&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x7EE7;&#x627F;View&#xFF0C;&#x5B83;&#x4E0D;&#x5728;View&#x6811;&#x8FD9;&#x4E2A;&#x5C42;&#x6B21;&#x91CC;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;ViewRoot&#x7406;&#x89E3;&#x4E3A;Activity&#x7BA1;&#x7406;View&#x6811;&#x7684;&#x4E2D;&#x4ECB;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x3001;&#x5237;&#x65B0;&#x4E8B;&#x4EF6;&#x90FD;&#x662F;&#x901A;&#x8FC7;ViewRoot&#x4F20;&#x9012;&#x7ED9;View&#x6811;&#x3002;</p>
-<p>&#x800C;DecorView&#x5C31;&#x662F;View&#x6811;&#x7684;&#x9876;&#x5C42;&#x4E86;&#xFF0C;&#x5B83;&#x7EE7;&#x627F;&#x81EA;FrameLayout&#xFF0C;&#x4E00;&#x4E2A;Acitivity&#x91CC;&#x7684;&#x6240;&#x6709;View&#x90FD;&#x5728;&#x8FD9;&#x4E2A;Decor&#x7684;&#x4E0B;&#x9762;&#xFF0C;DecorView&#x901A;&#x5E38;&#x5305;&#x542B;&#x4E00;&#x4E2A;LinearLayout&#xFF0C;&#x5B83;&#x7684;&#x5B50;view&#x662F;&#x4E0A;&#x4E0B;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF08;&#x6839;&#x636E;&#x7248;&#x672C;&#x4E0D;&#x540C;&#x6709;&#x533A;&#x522B;&#xFF09;&#x3002;</p>
 
       
     </div>
