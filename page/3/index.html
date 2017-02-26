@@ -101,7 +101,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/实习-share/" style="font-size: 10px;">实习 share</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a>
+						<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Gradle-Android/" style="font-size: 10px;">Gradle Android</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/复习笔记/" style="font-size: 17.5px;">复习笔记</a> <a href="/tags/实习-share/" style="font-size: 10px;">实习 share</a> <a href="/tags/杂/" style="font-size: 15px;">杂</a> <a href="/tags/课程/" style="font-size: 10px;">课程</a>
 					</div>
 				</section>
 				
@@ -159,6 +159,99 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-OpenGL入门学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/14/OpenGL入门学习/" class="article-date">
+  	<time datetime="2016-11-14T15:30:12.000Z" itemprop="datePublished">2016-11-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/14/OpenGL入门学习/">OpenGL入门学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x4ECA;&#x5929;&#x5FC3;&#x8840;&#x6765;&#x6F6E;&#x7A81;&#x7136;&#x60F3;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#x56FE;&#x5F62;&#x76F8;&#x5173;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6211;&#x542C;&#x8BF4;&#x8FC7;&#x7684;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x4E1C;&#x897F;&#x5C31;&#x53EA;&#x6709;OpenGL&#x548C;OpenCV&#x4E86;&#x3002;&#x6070;&#x597D;Android&#x4E0A;&#x7684;VR&#x6D89;&#x53CA;&#x5230;&#x4E86;OpenGL&#x7684;&#x4E00;&#x4E9B;&#x5185;&#x5BB9;&#xFF0C;&#x4ECA;&#x5929;&#x5C31;&#x5F00;&#x59CB;&#x8BB0;&#x5F55;&#x6211;&#x7684;OpenGL&#x5B66;&#x4E60;&#x5185;&#x5BB9;&#x3002;<br>1.&#x4EC0;&#x4E48;&#x662F;OpenGL<br>OpenGL&#x662F;&#x4E00;&#x5957;&#x5F00;&#x6E90;&#x7684;&#x3001;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x7ED8;&#x56FE;API&#x3002;&#x5728;&#x5E94;&#x7528;&#x4E0A;&#xFF0C;OpenGL&#x5E38;&#x7528;&#x4E8E;CAD&#x3001;&#x865A;&#x62DF;&#x5B9E;&#x5883;&#x3001;&#x79D1;&#x5B66;&#x53EF;&#x89C6;&#x5316;&#x7A0B;&#x5E8F;&#x548C;&#x7535;&#x5B50;&#x6E38;&#x620F;&#x5F00;&#x53D1;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x7ED8;&#x5236;2D&#x53CA;3D&#x56FE;&#x5F62;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;OpenGL&#x901A;&#x5E38;&#x8981;&#x642D;&#x914D;&#x7A97;&#x53E3;&#x5E93;&#xFF0C;&#x5982;QT&#xFF0C;&#x56E0;&#x4E3A;OpenGL&#x672C;&#x8EAB;&#x4E0D;&#x5904;&#x7406;&#x7A97;&#x53E3;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x9F20;&#x6807;&#x952E;&#x76D8;&#x8F93;&#x5165;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x52A8;&#x624B;&#x6765;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x3002;<br>2.OpenGL&#x7684;&#x7248;&#x672C;&#x53D8;&#x8FC1;<br>OpenGL&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#xFF1A;<br>OpenGL 1.0<br>&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF1A; 1992&#x5E74;1&#x6708;<br>&#x4EE5;&#x4E0B;&#x622A;&#x53D6;&#x81EA;&#x67D0;&#x535A;&#x5BA2;&#xFF1A;<br>OpenGL 1.0~OpenGL 1.5&#x662F;&#x7ECF;&#x5178;&#x7684;&#x56FA;&#x5B9A;&#x7BA1;&#x7EBF;&#x65F6;&#x4EE3;&#xFF1B;OpenGL 2.0~OpenGL 2.1&#x662F;&#x56FA;&#x5B9A;&#x7BA1;&#x7EBF;&#x548C;&#x53EF;&#x7F16;&#x7A0B;&#x7BA1;&#x7EBF;&#x5E76;&#x5B58;&#x7684;&#x65F6;&#x4EE3;&#xFF1B;OpenGL 3.0~OpenGL 4.x&#x5F00;&#x59CB;&#x662F;&#x53EF;&#x7F16;&#x7A0B;&#x7BA1;&#x7EBF;&#x5D1B;&#x8D77;&#x7684;&#x65F6;&#x4EE3;&#x3002;&#x5728;&#x51FA;&#x73B0;&#x53EF;&#x7F16;&#x7A0B;&#x7BA1;&#x7EBF;&#x7684;&#x90A3;&#x4E2A;&#x65F6;&#x4EE3;&#x3002;<br>&#x5C31;&#x6211;&#x73B0;&#x5728;&#x63A5;&#x89E6;&#x5230;&#x7684;&#x7684;&#x8D44;&#x6599;&#x6765;&#x770B;&#xFF0C;&#x73B0;&#x4EE3;&#x4F7F;&#x7528;&#x7684;OpenGL&#x7248;&#x672C;&#x81F3;&#x5C11;&#x5728;3.0&#x4EE5;&#x4E0A;&#x3002;<br>OpenGL&#x5404;&#x4E2A;&#x7248;&#x672C;&#x5F88;&#x6DF7;&#x4E71;&#xFF0C;&#x5728;&#x5404;&#x4E2A;&#x7248;&#x672C;&#x4E2D;&#x4F1A;&#x51FA;&#x73B0;&#x4E25;&#x91CD;&#x7684;&#x65AD;&#x5C42;&#x3002;<br>&#x672C;&#x6B21;&#x6211;&#x5B66;&#x4E60;&#x4F7F;&#x7528;&#x7684;OpenGL&#x4E3A;3.2&#x3002;<br>&#x6CE8;&#xFF1A;Android&#x4E2D;&#x4F7F;&#x7528;&#x7684;OpenGL&#x4E3A;OpenGL ES&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x5957;&#x4E13;&#x95E8;&#x4E3A;&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#x51C6;&#x5907;&#x7684;API,&#x5B83;&#x662F;OpenGL&#x7684;&#x5B50;&#x96C6;&#x3002;<br><a href="https://developer.android.com/guide/topics/graphics/opengl.html" target="_blank" rel="external">&#x5B98;&#x7F51;&#x4F20;&#x9001;&#x95E8;</a><br>&#x5B83;&#x7684;&#x4F7F;&#x7528;&#x548C;&#x4E00;&#x822C;&#x7684;OpenGL&#x4F7F;&#x7528;&#x662F;&#x6709;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x533A;&#x522B;&#x7684;&#x3002;&#x8FD9;&#x4E9B;&#x5185;&#x5BB9;&#x7559;&#x7F6E;&#x6211;&#x4EE5;&#x540E;&#x6574;&#x7406;&#x3002;<br>3.&#x73AF;&#x5883;&#x914D;&#x7F6E;<br>&#x7531;&#x4E8E;Mac&#x7684;Xcode&#x5185;&#x7F6E;&#x4E86;OpenGL&#x7684;&#x5E93;&#xFF0C;&#x6211;&#x6CA1;&#x6709;&#x7279;&#x610F;&#x53BB;&#x914D;&#x7F6E;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF0C;&#x4ECE;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x627E;&#x6765;&#x7684;example&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7F16;&#x8BD1;&#x5E76;&#x8FD0;&#x884C;&#x3002;<br>4.&#x5B66;&#x4E60;&#x4E4B;&#x524D;&#x8981;&#x5148;&#x4E86;&#x89E3;Shader&#x662F;&#x4EC0;&#x4E48;&#x3002;<br>Wiki:</p>
+<blockquote>
+<p>&#x7740;&#x8272;&#x5668;&#xFF08;&#x82F1;&#x8BED;&#xFF1A;shader&#xFF09;&#x5E94;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x673A;&#x56FE;&#x5F62;&#x5B66;&#x9886;&#x57DF;&#xFF0C;&#x6307;&#x4E00;&#x7EC4;&#x4F9B;&#x8BA1;&#x7B97;&#x673A;&#x56FE;&#x5F62;&#x8D44;&#x6E90;&#x5728;&#x6267;&#x884C;&#x6E32;&#x67D3;&#x4EFB;&#x52A1;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x56FE;&#x50CF;&#x7684;&#x989C;&#x8272;&#x6216;&#x660E;&#x6697;&#x3002;&#x4F46;&#x8FDB;&#x6765;&#xFF0C;&#x5B83;&#x4E5F;&#x80FD;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x6548;&#x679C;&#xFF0C;&#x6216;&#x8005;&#x89C6;&#x9891;&#x540E;&#x5904;&#x7406;&#x3002;&#x901A;&#x4FD7;&#x5730;&#x8BF4;&#xFF0C;&#x7740;&#x8272;&#x5668;&#x544A;&#x8BC9;&#x7535;&#x8111;&#x5982;&#x4F55;&#x7528;&#x7279;&#x6709;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x53BB;&#x7ED8;&#x5236;&#x7269;&#x4F53;&#x3002;<br>&#x7A0B;&#x5E8F;&#x5458;&#x5C06;&#x7740;&#x8272;&#x5668;&#x5E94;&#x7528;&#x4E8E;&#x56FE;&#x5F62;&#x5904;&#x7406;&#x5668;&#xFF08;GPU&#xFF09;&#x7684;&#x53EF;&#x7F16;&#x7A0B;&#x6D41;&#x6C34;&#x7EBF;&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x4E09;&#x7EF4;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x56FE;&#x5F62;&#x5904;&#x7406;&#x5668;&#x6709;&#x522B;&#x4E8E;&#x4F20;&#x7EDF;&#x7684;&#x56FA;&#x5B9A;&#x6D41;&#x6C34;&#x7EBF;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x4E3A;GPU&#x7F16;&#x7A0B;&#x5E26;&#x6765;&#x66F4;&#x9AD8;&#x7684;&#x7075;&#x6D3B;&#x6027;&#x548C;&#x9002;&#x5E94;&#x6027;&#x3002;&#x4EE5;&#x524D;&#x56FA;&#x6709;&#x7684;&#x6D41;&#x6C34;&#x7EBF;&#x53EA;&#x80FD;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x51E0;&#x4F55;&#x53D8;&#x6362;&#x548C;&#x50CF;&#x7D20;&#x7070;&#x5EA6;&#x8BA1;&#x7B97;&#x3002;&#x73B0;&#x5728;&#x53EF;&#x7F16;&#x7A0B;&#x6D41;&#x6C34;&#x7EBF;&#x8FD8;&#x80FD;&#x5904;&#x7406;&#x6240;&#x6709;&#x50CF;&#x7D20;&#x3001;&#x9876;&#x70B9;&#x3001;&#x7EB9;&#x7406;&#x7684;&#x4F4D;&#x7F6E;&#x3001;&#x8272;&#x8C03;&#x3001;&#x9971;&#x548C;&#x5EA6;&#x3001;&#x660E;&#x5EA6;&#x3001;&#x5BF9;&#x6BD4;&#x5EA6;&#x5E76;&#x5B9E;&#x65F6;&#x5730;&#x7ED8;&#x5236;&#x56FE;&#x50CF;&#x3002;&#x7740;&#x8272;&#x5668;&#x8FD8;&#x80FD;&#x4EA7;&#x751F;&#x5982;&#x6A21;&#x7CCA;&#x3001;&#x9AD8;&#x5149;&#x3001;&#x6709;&#x4F53;&#x79EF;&#x5149;&#x6E90;&#x3001;&#x5931;&#x7126;&#x3001;&#x5361;&#x901A;&#x6E32;&#x67D3;&#x3001;&#x8272;&#x8C03;&#x5206;&#x79BB;&#x3001;&#x7578;&#x53D8;&#x3001;&#x51F9;&#x51F8;&#x8D34;&#x56FE;&#x3001;&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;&#x3001;&#x8FD0;&#x52A8;&#x68C0;&#x6D4B;&#x7B49;&#x6548;&#x679C;</p>
+</blockquote>
+<p>&#x4ECE;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#xFF1A;<br>Shader&#x662F;&#x4F7F;&#x7528;GLSL&#xFF08;OpenGL Shading Language&#xFF09;&#x6216;HLSL&#xFF08;High Level Shader Language&#xFF09;&#x7F16;&#x5199;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x8FD0;&#x884C;&#x4E8E;GPU&#x4E0A;&#xFF0C;&#x4E13;&#x6CE8;&#x4E8E;&#x5BF9;&#x56FE;&#x50CF;&#x76F8;&#x5173;&#x7684;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x7684;&#x5904;&#x7406;&#x3002;Shader&#x662F;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5B83;&#x4E0D;&#x53D7;&#x9650;&#x4E8E;&#x67D0;&#x4E2A;&#x6846;&#x67B6;&#x3002;</p>
+<p>&#x7F16;&#x5199;OpenGL&#x7A0B;&#x5E8F;&#x65F6;&#x9700;&#x8981;&#x540C;&#x65F6;&#x7F16;&#x5199;OpenGL&#x4E3B;&#x7A0B;&#x5E8F;&#x548C;Shader&#x7A0B;&#x5E8F;&#x3002;&#x65E9;&#x671F;&#x7684;OpenGL&#x4F7F;&#x7528;&#x65F6;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6709;&#x6CA1;&#x6709;Shader&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x7684;OpenGL&#x5DF2;&#x7ECF;&#x662F;&#x5FC5;&#x987B;&#x4F7F;&#x7528;Shader&#x4E86;&#x3002;</p>
+<p>&#x5728;OpenGL&#x4E2D;Shader&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#xFF08;&#x5305;&#x62EC;&#x4F46;&#x4E0D;&#x9650;&#x4E8E;&#xFF09;&#x3002;<br>&#xFF08;1&#xFF09;Fragment Shader<br>Fragment Shader&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x9700;&#x8981;&#x7ED8;&#x5236;&#x7684;&#x50CF;&#x7D20;&#x70B9;&#x7684;&#x989C;&#x8272;&#x3002;<br>&#xFF08;2&#xFF09;Geometry Shader<br>Geometry Shader&#x7528;&#x4E8E;&#x5904;&#x7406;&#x70B9;&#x3001;&#x7EBF;&#x3001;&#x9762;&#x7684;&#x51E0;&#x4F55;&#x5750;&#x6807;&#x53D8;&#x6362;&#x3002;<br>&#xFF08;3&#xFF09;Vertex Shader<br>Vertex Shader&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x5C06;&#x76EE;&#x6807;&#x70B9;&#x5750;&#x6807;&#x53D8;&#x6362;&#x4E3A;&#x5B9E;&#x9645;&#x5C4F;&#x5E55;&#x4E0A;&#x663E;&#x793A;&#x7684;&#x4E8C;&#x7EF4;&#x5750;&#x6807;&#x3002;<br>&#x4E0B;&#x9762;&#x5C31;&#x6B63;&#x5F0F;&#x5F00;&#x59CB;&#x5B66;&#x4E60;OpenGL&#x5427;&#xFF01;</p>
+<p>4.Hello Triangle&#xFF01;<br>&#x4ECE;&#x4E00;&#x4E2A;&#x6700;&#x7B80;&#x5355;&#x7684;&#x7ED8;&#x5236;&#x4E09;&#x89D2;&#x5F62;&#x7684;example&#x5F00;&#x59CB;&#xFF0C;&#x521D;&#x6B65;&#x4E86;&#x89E3;&#x4F7F;&#x7528;OpenGL&#x7684;&#x6D41;&#x7A0B;&#x3002;<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// initialise GLFW</span></span><br><span class="line">glfwSetErrorCallback<span class="params">(OnError)</span>;</span><br><span class="line"><span class="keyword">if</span><span class="params">(!glfwInit<span class="params">()</span>)</span></span><br><span class="line">    throw std::runtime_error<span class="params">(<span class="string">&quot;glfwInit failed&quot;</span>)</span>;</span><br></pre></td></tr></table></figure></p>
+<p>&#x521D;&#x59CB;&#x5316;GLFW&#x3002;GLFW&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x5F00;&#x59CB;&#x63D0;&#x5230;OpenGL&#x7684;&#x4F7F;&#x7528;&#x5FC5;&#x987B;&#x642D;&#x914D;&#x7A97;&#x53E3;&#x56FE;&#x5F62;&#x5E93;&#xFF0C;GLFW&#x662F;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x4E3A;OpenGL&#x8BBE;&#x8BA1;&#x7684;&#x7A97;&#x53E3;&#x5E93;&#x3002;<br>&#x5728;&#x4F7F;&#x7528;OpenGL&#x524D;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x3002;&#x8FD9;&#x91CC;&#x521D;&#x59CB;&#x5316;GLFW&#x3002;<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// open a window with GLFW</span></span><br><span class="line">glfwWindowHint<span class="params">(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE)</span>;</span><br><span class="line">glfwWindowHint<span class="params">(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE)</span>;</span><br><span class="line">glfwWindowHint<span class="params">(GLFW_CONTEXT_VERSION_MAJOR, <span class="number">3</span>)</span>;</span><br><span class="line">glfwWindowHint<span class="params">(GLFW_CONTEXT_VERSION_MINOR, <span class="number">2</span>)</span>;</span><br><span class="line">glfwWindowHint<span class="params">(GLFW_RESIZABLE, GL_FALSE)</span>;</span><br><span class="line">gWindow = glfwCreateWindow<span class="params">(<span class="params">(int)</span>SCREEN_SIZE.x, <span class="params">(int)</span>SCREEN_SIZE.y, <span class="string">&quot;OpenGL Tutorial&quot;</span>, NULL, NULL)</span>;</span><br><span class="line"><span class="keyword">if</span><span class="params">(!gWindow)</span></span><br><span class="line">    throw std::runtime_error<span class="params">(<span class="string">&quot;glfwCreateWindow failed. Can your hardware handle OpenGL 3.2?&quot;</span>)</span>;</span><br></pre></td></tr></table></figure></p>
+<p>&#x5728;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;GLFW&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x3002;<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// GLFW settings</span><br><span class="line">glfwMakeContextCurrent<span class="list">(<span class="keyword">gWindow</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>&#x4E3A;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;OpenGL&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;Android&#x4E2D;&#x7684;Context&#x3002;<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// initialise GLEW</span></span><br><span class="line">glewExperimental = GL_TRUE; <span class="comment">//stops glew crashing on OSX :-/</span></span><br><span class="line"><span class="keyword">if</span>(glewInit() != GLEW_OK)</span><br><span class="line">    <span class="keyword">throw</span> <span class="built_in">std</span>::runtime_error(<span class="string">&quot;glewInit failed&quot;</span>);</span><br></pre></td></tr></table></figure></p>
+<p>&#x8FD9;&#x91CC;&#x521D;&#x59CB;&#x5316;GLEW&#x3002;&#x4EC0;&#x4E48;&#x662F;GLEW&#xFF1F;&#x5728;&#x73B0;&#x4EE3;OpenGL&#x7248;&#x672C;&#x91CC;&#xFF0C;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x4F7F;&#x7528;#include&lt; &#x2026; &gt;&#x8FD9;&#x6837;&#x7684;&#x9759;&#x6001;&#x94FE;&#x63A5;&#x7684;&#x65B9;&#x5F0F;&#x8C03;&#x7528;OpenGL&#x7684;API&#xFF0C;&#x5B83;&#x7684;API&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x8C03;&#x7528;&#x3002;GLEW&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x52A8;&#x6001;&#x8C03;&#x7528;OpenGL&#x7684;&#x5165;&#x53E3;&#x3002;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// loads the vertex shader and fragment shader, and links them to make the global gProgram</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">LoadShaders</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;tdogl::Shader&gt; shaders;</span><br><span class="line">    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath(<span class="string">&quot;vertex-shader.txt&quot;</span>), GL_VERTEX_SHADER));</span><br><span class="line">    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath(<span class="string">&quot;fragment-shader.txt&quot;</span>), GL_FRAGMENT_SHADER));</span><br><span class="line">    gProgram = <span class="keyword">new</span> tdogl::Program(shaders);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;LoadShaders&#x65B9;&#x6CD5;&#x6765;&#x521D;&#x59CB;&#x5316;shader&#x3002;<br>&#x5728;&#x4E4B;&#x524D;&#x63D0;&#x8FC7;&#x7684;&#xFF0C;shader&#x4EE5;GLSL&#x4E66;&#x5199;&#xFF0C;&#x8FD9;&#x91CC;shader&#x7684;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5B58;&#x5728;&#x4E00;&#x4E2A;txt&#x6587;&#x4EF6;&#x91CC;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x52A0;&#x8F7D;shader&#x6587;&#x4EF6;&#x91CC;&#x7684;&#x4EE3;&#x7801;&#x3002;<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// loads a triangle into the VAO global</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">LoadTriangle</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="comment">// make and bind the VAO</span></span><br><span class="line">    glGenVertexArrays(<span class="number">1</span>, &amp;gVAO);</span><br><span class="line">    glBindVertexArray(gVAO);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// make and bind the VBO</span></span><br><span class="line">    glGenBuffers(<span class="number">1</span>, &amp;gVBO);</span><br><span class="line">    glBindBuffer(GL_ARRAY_BUFFER, gVBO);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Put the three triangle verticies into the VBO</span></span><br><span class="line">    GLfloat vertexData[] = {</span><br><span class="line">        <span class="comment">//  X     Y     Z</span></span><br><span class="line">         <span class="number">0.0f</span>, <span class="number">0.8f</span>, <span class="number">0.0f</span>,</span><br><span class="line">        -<span class="number">0.8f</span>,-<span class="number">0.8f</span>, <span class="number">0.0f</span>,</span><br><span class="line">         <span class="number">0.8f</span>,-<span class="number">0.8f</span>, <span class="number">0.0f</span>,</span><br><span class="line">    };</span><br><span class="line">    glBufferData(GL_ARRAY_BUFFER, <span class="keyword">sizeof</span>(vertexData), vertexData, GL_STATIC_DRAW);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// connect the xyz to the &quot;vert&quot; attribute of the vertex shader</span></span><br><span class="line">    glEnableVertexAttribArray(gProgram-&gt;attrib(<span class="string">&quot;vert&quot;</span>));</span><br><span class="line">    glVertexAttribPointer(gProgram-&gt;attrib(<span class="string">&quot;vert&quot;</span>), <span class="number">3</span>, GL_FLOAT, GL_FALSE, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// unbind the VBO and VAO</span></span><br><span class="line">    glBindBuffer(GL_ARRAY_BUFFER, <span class="number">0</span>);</span><br><span class="line">    glBindVertexArray(<span class="number">0</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x8FD9;&#x91CC;&#x662F;&#x771F;&#x6B63;&#x7ED8;&#x5236;&#x4E09;&#x89D2;&#x5F62;&#x7684;&#x4EE3;&#x7801;&#x3002;<br>&#x4E00;&#x70B9;&#x70B9;&#x770B;&#x3002;<br><code>// make and bind the VBO
+glGenBuffers(1, &amp;gVBO);
+glBindBuffer(GL_ARRAY_BUFFER, gVBO);</code><br><code>// make and bind the VAO
+    glGenVertexArrays(1, &amp;gVAO);
+    glBindVertexArray(gVAO);</code><br>&#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;VBO&#x5BF9;&#x8C61;&#x548C;VAO&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x628A;&#x5B83;&#x548C;OpenGL&#x7ED1;&#x5B9A;<br>VBO&#x548C;VAO&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;<br>VAO&#xFF08;Vertex Array Object&#xFF09;&#x548C;VBO&#xFF08;Vertex Buffer Object&#xFF09;&#x662F;C++&#x7A0B;&#x5E8F;&#x548C;Shader&#x7A0B;&#x5E8F;&#x4F20;&#x9012;&#x6570;&#x636E;&#x4F7F;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x3002;<br>VBO&#x5B58;&#x50A8;&#x8981;&#x4F20;&#x9012;&#x7ED9;Shader&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x91CC;&#x7684;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x7C7B;&#x578B;&#x3002;VAO&#x5BF9;VBO&#x548C;Shader&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#xFF0C;&#x5B83;&#x63CF;&#x8FF0;&#x4E86;VBO&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4EE5;&#x53CA;&#x8BE5;&#x4F20;&#x9012;&#x4E2A;Shader&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><code>// Put the three triangle verticies into the VBO
+    GLfloat vertexData[] = {
+        //  X     Y     Z
+         0.0f, 0.8f, 0.0f,
+        -0.8f,-0.8f, 0.0f,
+         0.8f,-0.8f, 0.0f,
+    };
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData),vertexData, GL_STATIC_DRAW);</code><br>&#x8FD9;&#x91CC;&#x5411;VBO&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x4E3A;&#x8981;&#x7ED8;&#x5236;&#x4E09;&#x89D2;&#x5F62;&#xFF0C;&#x6240;&#x4EE5;&#x7ED9;VBO&#x6DFB;&#x52A0;&#x4E09;&#x4E2A;&#x70B9;&#x7684;&#x5750;&#x6807;&#x503C;&#x3002;<br><code>// connect the xyz to the &quot;vert&quot; attribute of the vertex shader
+    glEnableVertexAttribArray(gProgram-&gt;attrib(&quot;vert&quot;));
+    glVertexAttribPointer(gProgram-&gt;attrib(&quot;vert&quot;), 3, GL_FLOAT, GL_FALSE, 0, NULL);</code><br>&#x8C03;&#x7528;VAO&#x914D;&#x7F6E;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x4E3A;vert&#x3002;</p>
+<p><code>// unbind the VBO and VAO
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);</code><br>&#x6700;&#x540E;&#x5BF9;VBO&#x548C;VAO&#x89E3;&#x9664;&#x7ED1;&#x5B9A;&#xFF0C;&#x56E0;&#x4E3A;&#x4EE5;&#x540E;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x5B83;&#x4EEC;&#x4E86;&#xFF0C;&#x8FD9;&#x6837;&#x4E5F;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5BF9;&#x6570;&#x636E;&#x8BEF;&#x64CD;&#x4F5C;&#x3002;</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// run while the window is open</span></span><br><span class="line">while<span class="params">(!glfwWindowShouldClose<span class="params">(gWindow)</span>)</span>{</span><br><span class="line">    <span class="comment">// process pending events</span></span><br><span class="line">    glfwPollEvents<span class="params">()</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// draw one frame</span></span><br><span class="line">    Render<span class="params">()</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x6570;&#x636E;&#x8BBE;&#x5B9A;&#x5B8C;&#x540E;&#x8C03;&#x7528;Render&#x51FD;&#x6570;&#x5F00;&#x59CB;&#x6E32;&#x67D3;&#x7ED8;&#x56FE;&#x3002;<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// draws a single frame</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Render</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="comment">// clear everything</span></span><br><span class="line">    glClearColor(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>); <span class="comment">// black</span></span><br><span class="line">    glClear(GL_COLOR_BUFFER_BIT);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// bind the program (the shaders)</span></span><br><span class="line">    glUseProgram(gProgram-&gt;object());</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// bind the VAO (the triangle)</span></span><br><span class="line">    glBindVertexArray(gVAO);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// draw the VAO</span></span><br><span class="line">    glDrawArrays(GL_TRIANGLES, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// unbind the VAO</span></span><br><span class="line">    glBindVertexArray(<span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// unbind the program</span></span><br><span class="line">    glUseProgram(<span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// swap the display buffers (displays what was just drawn)</span></span><br><span class="line">    glfwSwapBuffers(gWindow);</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p><code>glClearColor(0, 0, 0, 1); // black
+glClear(GL_COLOR_BUFFER_BIT);</code><br>&#x6E05;&#x7A7A;&#x5C4F;&#x5E55;&#xFF0C;&#x8BA9;&#x7A97;&#x53E3;&#x80CC;&#x666F;&#x53D8;&#x6210;&#x9ED1;&#x8272;&#x3002;<br>``<br>    // bind the program (the shaders)<br>    glUseProgram(gProgram-&gt;object());</p>
+<pre><code>// bind the VAO <span class="list">(<span class="keyword">the</span> triangle)</span>
+glBindVertexArray<span class="list">(<span class="keyword">gVAO</span>)</span><span class="comment">;</span>
+</code></pre><p>``<br>&#x901A;&#x77E5;OpenGL&#x4F7F;&#x7528;VAO&#x548C;shader&#x3002;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenGL/">OpenGL</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-为什么实际电路总用与非门和或非门" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -193,6 +286,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/课程/">课程</a></li></ul>
+	</div>
+
       
 
       
@@ -244,6 +341,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
       
 
       
@@ -313,6 +414,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
       
 
       
@@ -364,6 +469,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂/">杂</a></li></ul>
+	</div>
+
       
 
       
@@ -439,6 +548,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
       
 
       
@@ -490,6 +603,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂/">杂</a></li></ul>
+	</div>
+
       
 
       
@@ -580,6 +697,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
       
 
       
@@ -697,70 +818,10 @@
     <div class="article-info article-info-index">
       
       
-      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-share" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/21/share/" class="article-date">
-  	<time datetime="2016-10-20T16:07:18.000Z" itemprop="datePublished">2016-10-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/21/share/">Gradle Share</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.gradle&#x6982;&#x5FF5;<br>groovy&#x57FA;&#x672C;&#x8BED;&#x6CD5;<br>gradle&#x3001;project&#x3001;task<br>gradlew  gradle wrapper<br>&#x63D2;&#x4EF6; plugin &#x6982;&#x5FF5;&#x3001;&#x4F5C;&#x7528;</p>
-<p>2.gradle&#x547D;&#x4EE4;<br>clean<br>bulid<br>tasks&#xFF08;Android Studio&#x67E5;&#x770B;&#xFF09;</p>
-<p><a href="https://github.com/tfnico/vim-gradle" target="_blank" rel="external">https://github.com/tfnico/vim-gradle</a><br>&#x8BA9;vim&#x80FD;&#x8BC6;&#x522B;gradle&#x8BED;&#x6CD5;</p>
-<p>feature<br>1.Executing multiple tasks  &#x6267;&#x884C;&#x591A;&#x4E2A;task&#xFF0C;&#x6BCF;&#x4E2A;&#x53EA;&#x6267;&#x884C;&#x4E00;&#x6B21;<br>   gradle  task1 task2<br>2.Excluding tasks           &#x53EF;&#x4EE5;&#x6392;&#x9664;&#x67D0;&#x4E2A;task&#x4E0D;&#x6267;&#x884C;<br>    gradle task2 -x task1<br>    task2 dependent task1<br>3.Continuing the build when a failure occurs            &#x5FFD;&#x7565;&#x9519;&#x8BEF;&#x7EE7;&#x7EED;&#x6267;&#x884C;<br>   &#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5176;&#x5B83;&#x95EE;&#x9898;<br>4.Task name abbreviation<br>   gradle&#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x7F29;&#x5199;<br>   &#x5982;&#x6267;&#x884C;task wangzuliang<br>   gradle wzl<br>5.Selecting which build to execute<br>  &#x53EF;&#x4EE5;&#x628A;&#x6587;&#x4EF6;&#x5F53;&#x6210;&#x53C2;&#x6570;&#x4F20;&#x9012;<br>  gradle -b zuliangwang/file1 task1<br>6.Forcing tasks to execute<br>  &#x81EA;&#x5E26;&#x589E;&#x91CF;&#x7F16;&#x8BD1; gradle sdk&#x91CC;&#x63D0;&#x4F9B;&#x7684;task&#x5927;&#x90E8;&#x5206;&#x90FD;&#x80FD;&#x589E;&#x91CF;&#x7F16;&#x8BD1;<br>  &#x6BCF;&#x6B21; gradle task1 &#x53EA;&#x7F16;&#x8BD1;&#x589E;&#x91CF;&#x90E8;&#x5206;<br>7.gradle&#x81EA;&#x5E26;&#x4E00;&#x4E9B;&#x7F16;&#x8BD1;&#x65F6;&#x5DE5;&#x5177;&#x5E2E;&#x52A9;&#x5206;&#x6790;<br>  &#x8BE6;&#x7EC6;<br>  <a href="https://docs.gradle.org/current/userguide/project_reports_plugin.html" target="_blank" rel="external">https://docs.gradle.org/current/userguide/project_reports_plugin.html</a></p>
-<ol>
-<li>Dry Run<br>&#x7C7B;&#x4F3C;&#x6253;Log&#x89C2;&#x5BDF;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x4E0D;&#x6267;&#x884C;task&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4EC5;&#x663E;&#x793A;&#x6267;&#x884C;&#x987A;&#x5E8F;<br>gradle -m task1</li>
-</ol>
-<p>3.build.gradle setting.gralde<br>&#x5E38;&#x89C1;&#x5C5E;&#x6027;&#x5206;&#x6790;<br>&#x770B;&#x61C2;Android Projecct&#x4E2D;&#x7684;build.gradle<br>Porject:settings.gradle&#x548C;build.gradle<br>task&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;</p>
-<p>4.<br>gradle&#x811A;&#x672C;&#x4E66;&#x5199;<br>task simpleTask &lt;&lt; {<br>    &#x2026;<br>}</p>
-<p>gradle blog<br><a href="http://www.infoq.com/cn/articles/android-in-depth-gradle?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk" target="_blank" rel="external">http://www.infoq.com/cn/articles/android-in-depth-gradle?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk</a></p>
-<p><a href="https://segmentfault.com/a/1190000004234712?_ea=538654" target="_blank" rel="external">https://segmentfault.com/a/1190000004234712?_ea=538654</a></p>
-<p>gradle&#x5B98;&#x65B9;&#x6587;&#x6863;<br><a href="https://docs.gradle.org/current/userguide/overview.html" target="_blank" rel="external">https://docs.gradle.org/current/userguide/overview.html</a><br>&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;android<br>web js   java app<br>&#x6838;&#x5FC3; build your project</p>
-<p>Groovy<br>Gradle&#x2019;s build scripts are written in Groovy, not XML. But unlike other approaches this is not for simply exposing the raw scripting power of a dynamic language. That would just lead to a very difficult to maintain build. The whole design of Gradle is oriented towards being used as a language, not as a rigid framework. And Groovy is our glue that allows you to tell your individual story with the abstractions Gradle (or you) provide. Gradle provides some standard stories but they are not privileged in any form. This is for us a major distinguishing feature compared to other declarative build systems. Our Groovy support is not just sugar coating. The whole Gradle API is fully Groovy-ized. Adding Groovy results in an enjoyable and productive experience.</p>
-<p>groovy API&#x624B;&#x518C;<br><a href="http://docs.groovy-lang.org/latest/html/groovy-jdk/index-all.html" target="_blank" rel="external">http://docs.groovy-lang.org/latest/html/groovy-jdk/index-all.html</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
       
 
       
